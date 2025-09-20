@@ -4,7 +4,7 @@
     "href": "post-listing.html",
     "title": "Writings on Stuff",
     "section": "",
-    "text": "Sample Post\n\n\n\nR\n\nStatistics\n\nProbability\n\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+    "text": "Sample Post\n\n\n\nR\n\nStatistics\n\nProbability\n\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/25-fa-analysis.html",
@@ -32,14 +32,14 @@
     "href": "posts/sample-post/index.html",
     "title": "Sample Post",
     "section": "",
-    "text": "This is a sample post. Evidently this sentence will be previewed!\nDid that display? It did! Here is a displayed math equation:\n\\[\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}.\n\\]\nWhat does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation \\(ax^2 + bx + c = 0\\). How does this look though?\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = theme_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "This is a sample post. Evidently this sentence will be previewed!\nDid that display? It did! Here is a displayed math equation:\n\\[\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}.\n\\]\nWhat does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation \\(ax^2 + bx + c = 0\\). How does this look though?\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = theme_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Professional webpage for John Myers, Ph.D.",
     "section": "",
-    "text": "Content will go here. And other stuff.\n\n\n\n Back to top"
+    "text": "Content will go here. And other stuff."
   },
   {
     "objectID": "courses/25-fa-calculus-ii.html",
