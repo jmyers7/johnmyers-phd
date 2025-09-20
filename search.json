@@ -1,30 +1,65 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "post-listing.html",
+    "href": "post-listing.html",
+    "title": "Writings on Stuff",
     "section": "",
-    "text": "About this blog"
+    "text": "Sample Post\n\n\n\nR\n\nStatistics\n\nProbability\n\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "courses/25-fa-analysis.html",
+    "href": "courses/25-fa-analysis.html",
+    "title": "Analysis, Fall 2025",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Blah blah blah."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "courses/25-fa-analysis.html#stuff",
+    "href": "courses/25-fa-analysis.html#stuff",
+    "title": "Analysis, Fall 2025",
+    "section": "Stuff",
+    "text": "Stuff\nBlah blah blah."
+  },
+  {
+    "objectID": "courses/25-fa-analysis.html#more-stuff",
+    "href": "courses/25-fa-analysis.html#more-stuff",
+    "title": "Analysis, Fall 2025",
+    "section": "More stuff",
+    "text": "More stuff\nBlah blah blah."
+  },
+  {
+    "objectID": "posts/sample-post/index.html",
+    "href": "posts/sample-post/index.html",
+    "title": "Sample Post",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "This is a sample post. Evidently this sentence will be previewed!\nDid that display? It did! Here is a displayed math equation:\n\\[\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}.\n\\]\nWhat does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation \\(ax^2 + bx + c = 0\\). How does this look though?\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = theme_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "johnmyers-phd",
+    "title": "Professional webpage for John Myers, Ph.D.",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nSep 17, 2025\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Content will go here. And other stuff.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "courses/25-fa-calculus-ii.html",
+    "href": "courses/25-fa-calculus-ii.html",
+    "title": "Calculus II, Fall 2025",
+    "section": "",
+    "text": "Blah blah blah."
+  },
+  {
+    "objectID": "courses/25-fa-calculus-ii.html#stuff",
+    "href": "courses/25-fa-calculus-ii.html#stuff",
+    "title": "Calculus II, Fall 2025",
+    "section": "Stuff",
+    "text": "Stuff\nBlah blah blah."
+  },
+  {
+    "objectID": "courses/25-fa-calculus-ii.html#more-stuff",
+    "href": "courses/25-fa-calculus-ii.html#more-stuff",
+    "title": "Calculus II, Fall 2025",
+    "section": "More stuff",
+    "text": "More stuff\nBlah blah blah."
   }
 ]

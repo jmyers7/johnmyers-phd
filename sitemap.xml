@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://johnmyers-phd.com/about.html</loc>
-    <lastmod>2025-09-20T15:01:35.392Z</lastmod>
+    <loc>https://johnmyers-phd.com/post-listing.html</loc>
+    <lastmod>2025-09-20T18:05:29.482Z</lastmod>
   </url>
   <url>
-    <loc>https://johnmyers-phd.com/posts/welcome/index.html</loc>
-    <lastmod>2025-09-20T15:01:35.395Z</lastmod>
+    <loc>https://johnmyers-phd.com/courses/25-fa-analysis.html</loc>
+    <lastmod>2025-09-20T16:07:50.162Z</lastmod>
   </url>
   <url>
-    <loc>https://johnmyers-phd.com/posts/post-with-code/index.html</loc>
-    <lastmod>2025-09-20T15:01:35.395Z</lastmod>
+    <loc>https://johnmyers-phd.com/posts/sample-post/index.html</loc>
+    <lastmod>2025-09-20T18:15:00.893Z</lastmod>
   </url>
   <url>
     <loc>https://johnmyers-phd.com/index.html</loc>
-    <lastmod>2025-09-20T15:01:35.393Z</lastmod>
+    <lastmod>2025-09-20T17:05:57.209Z</lastmod>
+  </url>
+  <url>
+    <loc>https://johnmyers-phd.com/courses/25-fa-calculus-ii.html</loc>
+    <lastmod>2025-09-20T16:06:55.179Z</lastmod>
   </url>
 </urlset>
