@@ -5,6 +5,7 @@ website:
   description: "Professional website of John Myers, Ph.D."
   site-url: https://johnmyers-phd.com
   title: "John Myers, Ph.D."
+  favicon: img/fav.png
   navbar:
     left:  
       - text: "Writings"
@@ -13,10 +14,17 @@ website:
         menu:
           - courses/25-fa-calculus-ii.qmd
           - courses/25-fa-analysis.qmd
+      - text: "Probabilistic Machine Learning"
+        href: https://www.johnmyersmath.com/book
+        target: _blank
       - icon: github
         href: https://github.com/jmyers7/
+        target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/john-myers-phd
+        target: _blank
+      - icon: envelope-open-fill
+        href: mailto:jmmyers25@gmail.com
   # sidebar:
   #   - id: teaching
   #     style: "docked"
