@@ -1,29 +1,29 @@
 [
   {
-    "objectID": "post-listing.html",
-    "href": "post-listing.html",
-    "title": "Writings on Stuff",
+    "objectID": "writings.html",
+    "href": "writings.html",
+    "title": "john myers, ph.d.",
     "section": "",
     "text": "Sample Post\n\n\n\nR\n\nStatistics\n\nProbability\n\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/25-fa-analysis.html",
     "href": "courses/25-fa-analysis.html",
-    "title": "Analysis, Fall 2025",
+    "title": "analysis, fall 2025",
     "section": "",
     "text": "Blah blah blah."
   },
   {
     "objectID": "courses/25-fa-analysis.html#stuff",
     "href": "courses/25-fa-analysis.html#stuff",
-    "title": "Analysis, Fall 2025",
+    "title": "analysis, fall 2025",
     "section": "Stuff",
     "text": "Stuff\nBlah blah blah."
   },
   {
     "objectID": "courses/25-fa-analysis.html#more-stuff",
     "href": "courses/25-fa-analysis.html#more-stuff",
-    "title": "Analysis, Fall 2025",
+    "title": "analysis, fall 2025",
     "section": "More stuff",
     "text": "More stuff\nBlah blah blah."
   },
@@ -32,33 +32,47 @@
     "href": "posts/sample-post/index.html",
     "title": "Sample Post",
     "section": "",
-    "text": "This is a sample post. Evidently this sentence will be previewed!\nDid that display? It did! Here is a displayed math equation:\n\\[\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}.\n\\]\nWhat does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation \\(ax^2 + bx + c = 0\\). How does this look though?\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = theme_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")"
+    "text": "This is a sample post. Evidently this sentence will be previewed!"
+  },
+  {
+    "objectID": "posts/sample-post/index.html#heres-a-heading",
+    "href": "posts/sample-post/index.html#heres-a-heading",
+    "title": "Sample Post",
+    "section": "Here’s a heading",
+    "text": "Here’s a heading\nHere’s a sentence after the heading.\nDid that display? It did! Here is a displayed math equation:\n\\[\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}.\n\\]\nWhat does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation \\(ax^2 + bx + c = 0\\). How does this look though?"
+  },
+  {
+    "objectID": "posts/sample-post/index.html#running-some-code",
+    "href": "posts/sample-post/index.html#running-some-code",
+    "title": "Sample Post",
+    "section": "Running some code!",
+    "text": "Running some code!\nLet’s try running some code.\nThe code is here:\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = theme_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Professional webpage for John Myers, Ph.D.",
+    "title": "john myers, ph.d.",
     "section": "",
     "text": "Content will go here. And other stuff."
   },
   {
     "objectID": "courses/25-fa-calculus-ii.html",
     "href": "courses/25-fa-calculus-ii.html",
-    "title": "Calculus II, Fall 2025",
+    "title": "calculus II, fall 2025",
     "section": "",
     "text": "Blah blah blah."
   },
   {
     "objectID": "courses/25-fa-calculus-ii.html#stuff",
     "href": "courses/25-fa-calculus-ii.html#stuff",
-    "title": "Calculus II, Fall 2025",
+    "title": "calculus II, fall 2025",
     "section": "Stuff",
     "text": "Stuff\nBlah blah blah."
   },
   {
     "objectID": "courses/25-fa-calculus-ii.html#more-stuff",
     "href": "courses/25-fa-calculus-ii.html#more-stuff",
-    "title": "Calculus II, Fall 2025",
+    "title": "calculus II, fall 2025",
     "section": "More stuff",
     "text": "More stuff\nBlah blah blah."
   }
