@@ -1,0 +1,37 @@
+---
+title: "Sample Post"
+date: "2025-09-20"
+categories: [R, Statistics, Probability]
+image: "image.jpg"
+---
+
+This is a sample post. Evidently this sentence will be previewed!
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+source("/Users/johnmyers/Documents/work/johnmyers-phd/aux-files/custom-theme.R")
+
+```
+
+Did that display? It did! Here is a displayed math equation:
+
+$$
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}.
+$$
+
+What does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation $ax^2 + bx + c = 0$. How does this look though?
+
+
+
+```{r, fig.width=5, fig.height=4}
+#| fig-align: center
+#| code-fold: true
+#| code-summary: "Show R code"
+
+ggplot(mpg, aes(displ, hwy)) +
+    geom_point(color = theme_colors["yellow"]) +
+    custom_theme() +
+    labs(title = "highway MPG vs. displacement", x = "displacement", y = "highway MPG")
+```

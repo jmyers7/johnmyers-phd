@@ -2,22 +2,32 @@ project:
   type: website
 
 website:
-  description: "A blog built with Quarto"
-  site-url: https://johnmyers-phd.com # you must change this appropriately for RSS feeds to work properly
+  description: "Professional website of John Myers, Ph.D."
+  site-url: https://johnmyers-phd.com
   title: "John Myers, Ph.D."
   navbar:
-    right:
-      - about.qmd
+    left:  
+      - text: "Writings"
+        href: post-listing.qmd
+      - text: "Teaching"
+        menu:
+          - courses/25-fa-calculus-ii.qmd
+          - courses/25-fa-analysis.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/jmyers7/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/john-myers-phd
+  # sidebar:
+  #   - id: teaching
+  #     style: "docked"
+  #     title: "Teaching"
+  #     contents: courses
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: custom.scss
+    header-includes: |
+      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
 
 
 

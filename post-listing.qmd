@@ -1,0 +1,14 @@
+---
+title: "Writings on Stuff"
+listing:
+    id: posts
+    contents: posts
+    type: grid
+    sort: "date desc"
+    categories: true
+# page-layout: full
+title-block-banner: false
+---
+
+::: {#posts}
+:::

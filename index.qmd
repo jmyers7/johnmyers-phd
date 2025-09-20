@@ -1,15 +1,6 @@
 ---
-title: "johnmyers-phd"
-listing:
-  contents: posts
-  feed: true
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "Professional webpage for John Myers, Ph.D."
+title-block-banner: false
 ---
 
-
+Content will go here. And other stuff.
