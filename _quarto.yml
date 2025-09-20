@@ -2,19 +2,18 @@ project:
   type: website
 
 website:
-  description: "Professional website of John Myers, Ph.D."
   site-url: https://johnmyers-phd.com
-  title: "John Myers, Ph.D."
+  title: "john myers, ph.d."
   favicon: img/fav.png
   navbar:
     left:  
-      - text: "Writings"
-        href: post-listing.qmd
-      - text: "Teaching"
+      - text: "writings"
+        href: writings.qmd
+      - text: "teaching"
         menu:
           - courses/25-fa-calculus-ii.qmd
           - courses/25-fa-analysis.qmd
-      - text: "Probabilistic Machine Learning"
+      - text: "probabilistic machine learning"
         href: https://www.johnmyersmath.com/book
         target: _blank
       - icon: github

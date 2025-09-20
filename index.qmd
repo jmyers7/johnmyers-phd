@@ -1,5 +1,4 @@
 ---
-title: "Professional webpage for John Myers, Ph.D."
 title-block-banner: false
 ---
 

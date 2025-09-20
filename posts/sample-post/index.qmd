@@ -1,11 +1,16 @@
 ---
 title: "Sample Post"
 date: "2025-09-20"
+toc: true
 categories: [R, Statistics, Probability]
 image: "thumbnail.png"
 ---
 
 This is a sample post. Evidently this sentence will be previewed!
+
+## Here's a heading
+
+Here's a sentence after the heading.
 
 ```{r}
 #| echo: false
@@ -22,6 +27,12 @@ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}.
 $$
 
 What does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation $ax^2 + bx + c = 0$. How does this look though?
+
+## Running some code!
+
+Let's try running some code.
+
+The code is here:
 
 ```{r, fig.width=5, fig.height=4}
 #| fig-align: center

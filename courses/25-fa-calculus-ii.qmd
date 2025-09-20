@@ -1,5 +1,5 @@
 ---
-title: "Calculus II, Fall 2025"
+title: "calculus II, fall 2025"
 # page-layout: full
 title-block-banner: false
 ---
