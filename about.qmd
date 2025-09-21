@@ -1,8 +1,8 @@
 ---
 title-block-banner: false
 ---
-
-<!-- <style>
+<!-- 
+<style>
 body {
   background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("img/background-pic.jpg");
   background-size: cover;
@@ -11,20 +11,33 @@ body {
 </style> -->
 
 ::: {.columns}
-::: {.column width="20%"}
-![](img/left-arrow.svg){fig-align='center' width=70%}
+
+::: {.column width="40%"}
+![](img/left-arrow-straight.svg){fig-align='center' width=55%}
 :::
+
+<!-- ::: {.column width="20%"}
+![](img/right-arrow.svg){fig-align='center' width=70%}
+::: -->
 
 ::: {.column width="60%"}
 ![](img/headshot-blur-01.jpg){fig-align='center'}
 :::
 
-::: {.column width="20%"}
-![](img/right-arrow.svg){fig-align='center' width=70%}
-:::
+
+
+
+
+
 :::
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.
 
+![](img/h-bar.svg){fig-align='center' width=30%}
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus. Blah! Blah! Blah! Blah! Blah! Blah! Blah! Blah!
+
+![](img/h-bar-2.svg){fig-align='center' width=30%}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.
