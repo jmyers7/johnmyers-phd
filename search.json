@@ -4,76 +4,48 @@
     "href": "writings.html",
     "title": "john myers, ph.d.",
     "section": "",
-    "text": "Sample Post\n\n\n\nR\n\nStatistics\n\nProbability\n\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "“Shiny” Central Limit Theorem\n\n\n\nR\n\nShiny\n\nStatistics\n\nProbability\n\n\n\n\n\n\n\n\n\nSep 20, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/25-fa-analysis.html",
     "href": "courses/25-fa-analysis.html",
-    "title": "analysis, fall 2025",
+    "title": "mat347 analysis, fall 2025",
     "section": "",
-    "text": "Blah blah blah."
+    "text": "Content will go here."
   },
   {
-    "objectID": "courses/25-fa-analysis.html#stuff",
-    "href": "courses/25-fa-analysis.html#stuff",
-    "title": "analysis, fall 2025",
-    "section": "Stuff",
-    "text": "Stuff\nBlah blah blah."
-  },
-  {
-    "objectID": "courses/25-fa-analysis.html#more-stuff",
-    "href": "courses/25-fa-analysis.html#more-stuff",
-    "title": "analysis, fall 2025",
-    "section": "More stuff",
-    "text": "More stuff\nBlah blah blah."
-  },
-  {
-    "objectID": "posts/sample-post/index.html",
-    "href": "posts/sample-post/index.html",
-    "title": "Sample Post",
+    "objectID": "posts/shiny-clt/index.html",
+    "href": "posts/shiny-clt/index.html",
+    "title": "“Shiny” Central Limit Theorem",
     "section": "",
-    "text": "This is a sample post. Evidently this sentence will be previewed!"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
   },
   {
-    "objectID": "posts/sample-post/index.html#heres-a-heading",
-    "href": "posts/sample-post/index.html#heres-a-heading",
-    "title": "Sample Post",
-    "section": "Here’s a heading",
-    "text": "Here’s a heading\nHere’s a sentence after the heading.\nDid that display? It did! Here is a displayed math equation:\n\\[\nx = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}.\n\\]\nWhat does it look like when I type LaTeX inline? Ok, the above equation expresses the solutions to the polynomial equation \\(ax^2 + bx + c = 0\\). How does this look though?"
+    "objectID": "posts/shiny-clt/index.html#header-1",
+    "href": "posts/shiny-clt/index.html#header-1",
+    "title": "“Shiny” Central Limit Theorem",
+    "section": "Header 1",
+    "text": "Header 1\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.\n\n\nShow R code\nset.seed(42)\nn.samples &lt;- 10000\nxbars &lt;- numeric(n.samples)\n\nfor (i in 1:n.samples) {\n    xbars[i] &lt;- mean(rpois(100, lambda = 5))\n}\n\ndf &lt;- data.frame(xbar = xbars)\n\nggplot(data = df, aes(xbar)) +\n    geom_histogram(fill = custom_colors[\"yellow\"], color = custom_colors[\"black\"]) +\n    custom_theme() +\n    labs(x = expression(bar(x)), title = \"distribution of sample means drawn\\nfrom a Poisson distribution\")\n\n\n\n\n\n\n\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = custom_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")\n\n\n\n\n\n\n\n\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus."
   },
   {
-    "objectID": "posts/sample-post/index.html#running-some-code",
-    "href": "posts/sample-post/index.html#running-some-code",
-    "title": "Sample Post",
-    "section": "Running some code!",
-    "text": "Running some code!\nLet’s try running some code.\nThe code is here:\n\n\nShow R code\nggplot(mpg, aes(displ, hwy)) +\n    geom_point(color = theme_colors[\"yellow\"]) +\n    custom_theme() +\n    labs(title = \"highway MPG vs. displacement\", x = \"displacement\", y = \"highway MPG\")"
+    "objectID": "posts/shiny-clt/index.html#header-2",
+    "href": "posts/shiny-clt/index.html#header-2",
+    "title": "“Shiny” Central Limit Theorem",
+    "section": "Header 2",
+    "text": "Header 2\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "about.html",
+    "href": "about.html",
     "title": "john myers, ph.d.",
     "section": "",
-    "text": "Content will go here. And other stuff."
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus. Blah! Blah! Blah! Blah! Blah! Blah! Blah!}"
   },
   {
     "objectID": "courses/25-fa-calculus-ii.html",
     "href": "courses/25-fa-calculus-ii.html",
-    "title": "calculus II, fall 2025",
+    "title": "mat220 calculus II, fall 2025",
     "section": "",
-    "text": "Blah blah blah."
-  },
-  {
-    "objectID": "courses/25-fa-calculus-ii.html#stuff",
-    "href": "courses/25-fa-calculus-ii.html#stuff",
-    "title": "calculus II, fall 2025",
-    "section": "Stuff",
-    "text": "Stuff\nBlah blah blah."
-  },
-  {
-    "objectID": "courses/25-fa-calculus-ii.html#more-stuff",
-    "href": "courses/25-fa-calculus-ii.html#more-stuff",
-    "title": "calculus II, fall 2025",
-    "section": "More stuff",
-    "text": "More stuff\nBlah blah blah."
+    "text": "Content will go here."
   }
 ]
