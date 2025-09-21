@@ -6,7 +6,12 @@ website:
   title: "john myers, ph.d."
   favicon: img/fav.png
   navbar:
+    title: false
     left:  
+      - text: "home"
+        href: index.qmd
+      - text: "about"
+        href: about.qmd
       - text: "writings"
         href: writings.qmd
       - text: "teaching"
@@ -31,10 +36,23 @@ website:
   #     contents: courses
 format:
   html:
+    filters:
+    - callouty-theorem
     theme: custom.scss
     header-includes: |
-      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
+callouty-theorem:
+  thm: # Type of the theorem or proof. Note that for theorems 3-letter abbreviation (`thm`, etc.) should be used
+    override-title: false # Whether to override the title of the callout block by the name of the theorem or proof
+    callout:
+      type: note
+      appearance: minimal
+      collapse: false
+      icon: false
 
-
-
+execute: 
+  warning: false
+  message: false

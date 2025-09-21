@@ -1,0 +1,70 @@
+---
+title: '"Shiny" Central Limit Theorem'
+date: "2025-09-20"
+toc: true
+categories: [R, Shiny, Statistics, Probability]
+image: "thumbnail.png"
+---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
+
+
+## Header 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.  
+
+
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+source("/Users/johnmyers/Documents/work/johnmyers-phd/aux-files/custom-theme.R")
+
+```
+
+
+```{r, fig.width=5, fig.height=4}
+#| echo: true
+#| fig-align: center
+#| code-fold: true 
+#| code-summary: "Show R code"
+
+set.seed(42)
+n.samples <- 10000
+xbars <- numeric(n.samples)
+
+for (i in 1:n.samples) {
+    xbars[i] <- mean(rpois(100, lambda = 5))
+}
+
+df <- data.frame(xbar = xbars)
+
+ggplot(data = df, aes(xbar)) +
+    geom_histogram(fill = custom_colors["yellow"], color = custom_colors["black"]) +
+    custom_theme() +
+    labs(x = expression(bar(x)), title = "distribution of sample means drawn\nfrom a Poisson distribution")
+
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.  
+
+
+
+```{r, fig.width=5, fig.height=4}
+#| fig-align: center
+#| code-fold: true
+#| code-summary: "Show R code"
+
+ggplot(mpg, aes(displ, hwy)) +
+    geom_point(color = custom_colors["yellow"]) +
+    custom_theme() +
+    labs(title = "highway MPG vs. displacement", x = "displacement", y = "highway MPG")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.  
+
+
+## Header 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.  
