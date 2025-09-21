@@ -12,7 +12,7 @@ body {
 
 ::: {.columns}
 ::: {.column width="20%"}
-![](img/left-arrow-01.svg){fig-align='center' width=70%}
+![](img/left-arrow.svg){fig-align='center' width=70%}
 :::
 
 ::: {.column width="60%"}
@@ -20,11 +20,11 @@ body {
 :::
 
 ::: {.column width="20%"}
-![](img/right-arrow-01.svg){fig-align='center' width=70%}
+![](img/right-arrow.svg){fig-align='center' width=70%}
 :::
 :::
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus. Blah! Blah! Blah! Blah! Blah! Blah! Blah!}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus. Blah! Blah! Blah! Blah! Blah! Blah! Blah! Blah!
