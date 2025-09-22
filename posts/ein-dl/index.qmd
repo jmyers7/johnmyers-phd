@@ -1,8 +1,8 @@
 ---
-title: '"Shiny" Central Limit Theorem'
-date: "2025-09-25"
+title: "Einstein does deep learning"
+date: "2025-10-02"
 toc: true
-categories: [R, Shiny, Probability, Interactive, Central Limit Theorem]
+categories: [Python, PyTorch, Deep Learning, Neural networks, Tensors, Linear algebra]
 image: "thumbnail.png"
 ---
 

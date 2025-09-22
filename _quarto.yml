@@ -4,7 +4,7 @@ project:
 website:
   site-url: https://johnmyers-phd.com
   title: "john myers, ph.d."
-  favicon: img/fav.png
+  favicon: img/fav-new.png
   navbar:
     title: false
     left:  
@@ -29,11 +29,7 @@ website:
         target: _blank
       - icon: envelope-open-fill
         href: mailto:jmmyers25@gmail.com
-  # sidebar:
-  #   - id: teaching
-  #     style: "docked"
-  #     title: "Teaching"
-  #     contents: courses
+  
 format:
   html:
     filters:
@@ -45,8 +41,8 @@ format:
       <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
 callouty-theorem:
-  thm: # Type of the theorem or proof. Note that for theorems 3-letter abbreviation (`thm`, etc.) should be used
-    override-title: false # Whether to override the title of the callout block by the name of the theorem or proof
+  thm:
+    override-title: false
     callout:
       type: note
       appearance: minimal

@@ -1,7 +1,6 @@
 ---
 title: "mat347 analysis, fall 2025"
-# page-layout: full
-title-block-banner: false
+title-block-banner: true
 ---
 
-Content will go here.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus.  
