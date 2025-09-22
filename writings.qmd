@@ -8,5 +8,7 @@ listing:
 title-block-banner: false
 ---
 
+![](/img/writing-arrow.svg){fig-align='center' width=50%}
+
 ::: {#posts}
 :::

@@ -3,20 +3,9 @@ title-block-banner: false
 ---
 
 <style>
-/* body {
-  background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("img/background-pic.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
 #head {
   padding-top: 50px;
 }
 </style>
 
-<!-- <h1>john myers, ph.d.</h1>
-
-<div id="subtitle">tech / data / math<div> -->
-
-
-![](img/john-myers-01.svg){fig-align='center' width=100% id=head}
+![](img/john-myers-2.svg){fig-align='center' width=100% id=head}

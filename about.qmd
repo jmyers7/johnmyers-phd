@@ -1,14 +1,6 @@
 ---
 title-block-banner: false
 ---
-<!-- 
-<style>
-body {
-  background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("img/background-pic.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style> -->
 
 ::: {.columns}
 
@@ -16,18 +8,9 @@ body {
 ![](img/left-arrow-straight.svg){fig-align='center' width=55%}
 :::
 
-<!-- ::: {.column width="20%"}
-![](img/right-arrow.svg){fig-align='center' width=70%}
-::: -->
-
 ::: {.column width="60%"}
 ![](img/headshot-blur-01.jpg){fig-align='center'}
 :::
-
-
-
-
-
 
 :::
 
