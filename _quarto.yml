@@ -1,10 +1,12 @@
 project:
   type: website
-
+  resources: 
+    - "posts/shiny-clt/svg/**"
 website:
   site-url: https://johnmyers-phd.com
   title: "john myers, ph.d."
   favicon: img/fav-new.png
+  
   navbar:
     title: false
     left:  

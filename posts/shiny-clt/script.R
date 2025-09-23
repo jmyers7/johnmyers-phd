@@ -1,0 +1,81 @@
+library("ggplot2")
+library("dplyr")
+library("latex2exp")
+source("../../aux-files/custom-theme.R")
+set.seed(42)
+yellow <- custom_colors[["yellow"]]
+blue <- custom_colors[["blue"]]
+pink <- custom_colors[["pink"]]
+grey <- custom_colors[["grey"]]
+
+theme_set(custom_theme())
+
+#########################################
+
+n.components = 4
+weights <- c(0.2, 0.3, 0.1, 0.4)
+means <- c(0, 3, 5, 10)
+sds <- c(1, 0.75, 0.5, 2)
+
+pdf <- function(x) {
+  rowSums(
+    sapply(
+      X = seq_along(weights),
+      FUN = function(i) weights[i] * dnorm(x, mean = means[i], sd = sds[i])
+    )
+  )
+}
+
+ggplot(data.frame(x = c(-4, 14)), aes(x)) +
+  stat_function(fun = pdf, color = yellow) +
+  labs(y = "density", title = "data distribution")
+
+###################################
+
+second.moments <- means ** 2 + sds ** 2
+mu <- as.numeric(weights %*% means)
+
+plot.sampling.dist <- function(n.sample, n.replicates = 1000) {
+  
+  sigma <- sqrt(as.numeric(weights %*% second.moments - (weights %*% means) ** 2) / n.sample)
+  components <- sample(
+    1:n.components,
+    size = n.replicates * n.sample,
+    replace = TRUE,
+    prob = weights
+  )
+
+  boot.sample <- matrix(
+    rnorm(n.replicates * n.sample, mean = means[components], sd = sds[components]),
+    nrow = n.replicates,
+    ncol = n.sample
+  )
+
+  sample.dist <- rowMeans(boot.sample)
+
+  ggplot(data.frame(xbar = sample.dist), aes(x = xbar)) +
+    geom_histogram(
+      aes(y = after_stat(density)),
+      color = grey,
+      bins = 50,
+      alpha = 0.5,
+      fill = yellow
+    ) +
+    stat_density(aes(color = "data"), geom = "line") +
+    stat_function(
+      aes(color = "normal"),
+      fun = function(x) dnorm(x, mean = mu, sd = sigma),    
+    ) + 
+    scale_color_manual(
+      name = NULL,
+      values = c("data" = yellow, "normal" = blue)
+    ) +
+    labs(
+      x = TeX("$\\bar{x}$"),
+      title = TeX(paste0("sampling distribution for $\\bar{X}_{", n.sample, "}$"))
+    )
+
+}
+
+plot.sampling.dist(n.sample = 100)
+
