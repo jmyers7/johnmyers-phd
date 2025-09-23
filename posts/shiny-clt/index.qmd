@@ -27,6 +27,9 @@ grey <- custom_colors[["grey"]]
 
 theme_set(custom_theme())
 
+library("reticulate")
+use_condaenv("default-env", required = TRUE)
+
 ```
 
 
@@ -51,7 +54,7 @@ pdf <- function(x) {
 }
 
 ggplot(data.frame(x = c(-4, 14)), aes(x)) +
-  stat_function(fun = pdf, color = yellow) +
+  stat_function(fun = pdf, color = yellow, linewidth = 1, n = 250) +
   labs(y = "density", title = "data distribution")
 
 ```
@@ -93,10 +96,15 @@ plot.sampling.dist <- function(n.sample, n.replicates = 1000) {
       alpha = 0.5,
       fill = yellow
     ) +
-    stat_density(aes(color = "data"), geom = "line") +
+    stat_density(
+      aes(color = "data"),
+      geom = "line",
+      linewidth = 1
+    ) +
     stat_function(
       aes(color = "normal"),
-      fun = function(x) dnorm(x, mean = mu, sd = sigma),    
+      fun = function(x) dnorm(x, mean = mu, sd = sigma),
+      linewidth = 1   
     ) + 
     scale_color_manual(
       name = NULL,
@@ -106,7 +114,6 @@ plot.sampling.dist <- function(n.sample, n.replicates = 1000) {
       x = TeX("$\\bar{x}$"),
       title = TeX(paste0("sampling distribution for $\\bar{X}_{", n.sample, "}$"))
     )
-
 }
 
 plot.sampling.dist(n.sample = 3)
@@ -134,5 +141,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget
 #| code-summary: "Show R code"
 
 plot.sampling.dist(n.sample = 100)
+
+```
+
+```{python}
+#| echo: true
+#| fig-align: center
+#| code-fold: true
+#| code-summary: "Show Python code"
+
+import scipy.stats as ss
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.style.use('../../aux-files/custom-theme.mplstyle')
+
+meanlog = 1
+sdlog = 0.75
+X = ss.lognorm(s=sdlog, scale=np.exp(meanlog))
+
+lognorm_mean = X.mean()
+
+x_grid = np.linspace(0, 13, num=250)
+
+_, ax = plt.subplots()
+ax.plot(x_grid, X.pdf(x_grid))
+ax.set_title('log-normal distribution')
+ax.set_xlabel('x')
+ax.set_ylabel('density')
+plt.tight_layout()
+plt.show()
 
 ```
