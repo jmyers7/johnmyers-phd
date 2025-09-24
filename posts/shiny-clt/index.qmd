@@ -2,7 +2,7 @@
 title: '"Shiny" Central Limit Theorem'
 date: "2025-09-25"
 toc: true
-categories: [R, Shiny, Interactive, Probability, Central Limit Theorem]
+categories: [R, Shiny, Python, SciPy, Interactive, Probability, Statistics, Central Limit Theorem]
 image: "thumbnail.png"
 ---
 
@@ -104,7 +104,7 @@ Plot the PDF of the mixture of Gaussians:
 
 ggplot(data.frame(x = c(-4, 14)), aes(x)) +
   stat_function(fun = mixture.pdf, color = yellow, linewidth = 1, n = 250) +
-  labs(y = "density", title = "data distribution")
+  labs(y = "density", title = "mixture of gaussians")
 
 ```
 
@@ -266,7 +266,7 @@ x_grid = np.linspace(0, 13, num=250)
 
 _, ax = plt.subplots()
 ax.plot(x_grid, X.pdf(x_grid), color=yellow)
-ax.set_title('log-normal distribution')
+ax.set_title('log-normal')
 ax.set_xlabel('x')
 ax.set_ylabel('density')
 plt.tight_layout()
