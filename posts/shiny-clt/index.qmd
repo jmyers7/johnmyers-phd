@@ -2,7 +2,7 @@
 title: '"Shiny" Central Limit Theorem'
 date: "2025-09-25"
 toc: true
-categories: [R, Shiny, Python, SciPy, Reticulate, Interactive, Probability, Statistics, Central Limit Theorem, Probabilistic graphical models, Mixture of gaussians]
+categories: [R, Shiny, Python, SciPy, Reticulate, Interactive, Probability, Statistics, Central Limit Theorem, Mixture of gaussians]
 image: "thumbnail.png"
 ---
 

@@ -8,3 +8,118 @@ image: "thumbnail.png"
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
 
+# Heading 1
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+import scipy.stats as ss
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+```
+
+```{python}
+#| echo: false
+#| include: false
+#| warning: false
+#| message: false
+
+np.random.seed(42)
+plt.style.use("../../aux-files/custom-theme.mplstyle")
+yellow = "#FFC300"
+blue = "#3399FF"
+pink = "#FF3399"
+grey = "#121212"
+white = "#E5E5E5"
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+params = [
+  {'loc':0, 'scale':1},
+  {'loc':4, 'scale':2},
+  {'loc':8, 'scale':0.5}
+]
+probs = [0.2, 0.7, 0.1]
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: true
+#| fig-align: center
+
+mesh = np.linspace(-3, 12, num=200)
+_, ax = plt.subplots()
+
+for param in params:
+  X = ss.norm(**param)
+  ax.plot(mesh, X.pdf(mesh), color=yellow)
+
+ax.set_xlabel('x')
+ax.set_ylabel('density')
+ax.set_title('gaussian components')
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+def mixture_pdf(x):  
+    return sum([prob * ss.norm(**param).pdf(x) for prob, param in zip(probs, params)])
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: true 
+#| fig-align: center
+
+_, ax = plt.subplots()
+ax.plot(mesh, mixture_pdf(mesh))
+ax.set_xlabel('x')
+ax.set_ylabel('density')
+ax.set_title('mixture pdf')
+plt.tight_layout()
+plt.show()
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+n_samples = 3500
+c_samples = np.random.choice(params, size=n_samples, p=probs)
+x_samples = [ss.norm(**param).rvs() for param in c_samples]
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: true 
+#| fig-align: center
+
+_, ax = plt.subplots()
+sns.histplot(data=x_samples, color=yellow, alpha=0.5, ec=grey, bins=40, stat='density', label='samples')
+ax.plot(mesh, mixture_pdf(mesh), color=blue, label='mixture PDF')
+ax.set_xlabel('x')
+ax.set_ylabel('density')
+ax.set_title('sample distribution + pdf')
+ax.legend()
+plt.show()
+
+```
