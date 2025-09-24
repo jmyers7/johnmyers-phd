@@ -172,7 +172,6 @@ generate.mixture.sample <- function(n.sample, n.replicates, n.components, weight
   df.sample <- data.frame(xbar = rowMeans(matrix.sample))
   
   return(df.sample)
-
 }
 
 ```
