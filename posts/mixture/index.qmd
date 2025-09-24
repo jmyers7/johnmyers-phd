@@ -1,9 +1,10 @@
 ---
-title: "What is information theory? (with SciPy!)"
-date: "2025-09-30"
+title: "Gaussians all mixed up"
+date: "2025-09-22"
 toc: true
-categories: [Python, SciPy, Information theory, Entropy, Probability, Surprisal]
+categories: [R, Probability, Statistics, Probabilistic graphical models, Mixture of gaussians]
 image: "thumbnail.png"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
+
