@@ -8,3 +8,68 @@ image: "thumbnail.png"
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
 
+```{python}
+#| echo: false
+#| include: false
+#| warning: false
+#| message: false
+
+import scipy.stats as ss
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+np.random.seed(42)
+plt.style.use("../../aux-files/custom-theme.mplstyle")
+yellow = "#FFC300"
+blue = "#3399FF"
+pink = "#FF3399"
+grey = "#121212"
+white = "#E5E5E5"
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: false
+#| fig-align: center
+
+from sklearn.mixture import GaussianMixture
+
+data = np.load("../gmm-1/data.npy")
+X = data.reshape(-1, 1)
+
+gmm = GaussianMixture(n_components=3, random_state=42)
+gmm.fit(X)
+
+means = gmm.means_.flatten()
+stds = np.sqrt(gmm.covariances_).flatten()
+weights = gmm.weights_
+params = [{"loc": mu, "scale": sigma} for mu, sigma in zip(means, stds)]
+
+print("Means:", means)
+print("Standard deviations:", stds)
+print("Weights:", weights)
+
+```
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+def mixture_pdf(x):  
+  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, params)])
+
+mesh = np.linspace(8, 22, num=200)
+
+sns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat="density", label="data")
+plt.plot(mesh, mixture_pdf(mesh), color=blue, label="GMM PDF")
+plt.xlabel("x")
+plt.ylabel("density")
+plt.title("data + GMM PDF")
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+```

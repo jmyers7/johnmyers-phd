@@ -2,13 +2,15 @@
 title: "Gaussians all mixed up: a first look"
 date: "2025-09-22"
 toc: true
-categories: [R, Probability, Statistics, Probabilistic graphical models, Mixture models]
+categories: [R, Probability, Statistics, Probabilistic graphical models, Mixture models, Gaussian mixture models]
 image: "thumbnail.png"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
+A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this model assumes that observed data arises from a combination of several underlying normal distributions, each contributing to the overall distribution with different weights and parameters. Rather than forcing all data points to conform to a single bell curve, a gaussian mixture allows for multiple clusters, each governed by its own mean, variance, and relative importance in the mixture.
 
-# Header 1
+The mathematical foundation rests on the idea that any data point could have originated from any of the component gaussians, but with varying probabilities. This creates a rich framework for modeling complex, multi-modal distributions that frequently appear in real-world scenarios. Consider, for example, the heights of adults in a population that includes both men and women, or the distribution of pixel intensities in an image containing multiple distinct objects. A single gaussian would poorly capture the true underlying structure, while a mixture model can naturally accommodate the multiple peaks and varying spreads that characterize such data. The beauty of this approach lies not only in its flexibility but also in its mathematical tractability, making it both theoretically sound and computationally feasible for a wide range of applications.
+
+For example, suppose we were presented with the following data distribution, displayed here as a histogram:
 
 ```{python}
 #| echo: false
@@ -33,76 +35,19 @@ white = "#E5E5E5"
 
 
 ```{python}
-#| echo: true
-#| code-fold: true
-#| fig-align: center
-
-data = np.load("data.npy")
-data_count = len(data)
-data_mean = np.mean(data)
-data_sd = np.std(data)
-
-print(f"There are {data_count} observations in the data.")
-print(f"The first five observations are {data[:5]}.")
-print(f"The data mean is {data_mean:.2f}, while the standard deviation is {data_sd:.2f}.")
-
-```
-
-
-```{python}
-#| echo: true
+#| echo: false
 #| code-fold: true 
 #| fig-align: center
 
-sns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2)
+data = np.load("data.npy")
+
+sns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2, stat="density")
 plt.xlabel('x')
-plt.ylabel('count')
-plt.title('data')
+plt.ylabel('density')
 plt.show()
 
 ```
 
+Three clusters are immediately evident: the first with a peak around $x=10$, the second around $x=15$, and the third near $x=21$.
 
-```{python}
-#| echo: true
-#| code-fold: false
-#| fig-align: center
-
-from sklearn.mixture import GaussianMixture
-
-X = data.reshape(-1, 1)
-
-gmm = GaussianMixture(n_components=3, random_state=42)
-gmm.fit(X)
-
-means = gmm.means_.flatten()
-stds = np.sqrt(gmm.covariances_).flatten()
-weights = gmm.weights_
-params = [{"loc": mu, "scale": sigma} for mu, sigma in zip(means, stds)]
-
-print("Means:", means)
-print("Standard deviations:", stds)
-print("Weights:", weights)
-
-```
-
-```{python}
-#| echo: true
-#| code-fold: false 
-#| fig-align: center
-
-def mixture_pdf(x):  
-  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, params)])
-
-mesh = np.linspace(8, 22, num=200)
-
-sns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat="density", label="data")
-plt.plot(mesh, mixture_pdf(mesh), color=blue, label="GMM PDF")
-plt.xlabel("x")
-plt.ylabel("density")
-plt.title("data + GMM PDF")
-plt.legend()
-plt.tight_layout()
-plt.show()
-
-```
+This synthetic dataset contains 1,000 observations sampled from a mixture of gaussians, also called a <span style="color: #FFC300;">*gaussian mixture model*</span> or <span style="color: #FFC300;">*GMM*</span>. In this introductory post, I'll explain the mathematical and graphical structure of the GMM that generated this data. Since I fixed the GMM parameters before sampling, we know the true underlying model. In a follow-up post, I'll tackle the inverse problem: given only the dataset, how can we estimate the parameters and recover the original GMM?
