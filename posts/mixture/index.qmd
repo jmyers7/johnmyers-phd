@@ -31,7 +31,7 @@ white = "#E5E5E5"
 
 ```
 
-You surveyed 1,000 cookie convention attendees to find out just how many cookies they could devour in a single day. Naturally, being the conscientious data scientist you are, you loaded the results into a `NumPy` array and fired up `Python` to crunch some summary statistics:
+You surveyed 1,000 cookie convention attendees to find out just how many cookies they could devour in a single day. Naturally, being the conscientious data scientist you are, you fired up `Python` and loaded the results into a `NumPy` array to crunch some summary statistics:
 
 ```{python}
 #| echo: true
