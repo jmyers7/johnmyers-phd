@@ -5,7 +5,7 @@ project:
 website:
   site-url: https://johnmyers-phd.com
   title: "john myers, ph.d."
-  favicon: img/fav-new.png
+  favicon: img/fav.png
   
   navbar:
     title: false

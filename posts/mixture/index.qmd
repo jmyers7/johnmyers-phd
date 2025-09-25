@@ -99,7 +99,7 @@ print("Weights:", weights)
 def mixture_pdf(x):  
   return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, params)])
 
-mesh = np.linspace(7, 23, num=200)
+mesh = np.linspace(8, 22, num=200)
 
 sns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat="density", label="data")
 plt.plot(mesh, mixture_pdf(mesh), color=blue, label="GMM PDF")
