@@ -1,14 +1,14 @@
 ---
-title: "Cookies and Gaussians"
+title: "Gaussians all mixed up"
 date: "2025-09-22"
 toc: true
 categories: [R, Probability, Statistics, Probabilistic graphical models]
 image: "thumbnail.png"
 ---
 
-You’re a data scientist at a cookie convention. What do you do? Survey the participants and fit a Gaussian mixture model, of course. 🍪 😋
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
 
-# Exploratory cookie analysis
+# Header 1
 
 ```{python}
 #| echo: false
@@ -31,14 +31,13 @@ white = "#E5E5E5"
 
 ```
 
-You surveyed 1,000 cookie convention attendees to find out just how many cookies they could devour in a single day. Naturally, being the conscientious data scientist you are, you fired up `Python` and loaded the results into a `NumPy` array to crunch some summary statistics:
 
 ```{python}
 #| echo: true
 #| code-fold: true
 #| fig-align: center
 
-data = np.load("cookie_data.npy")
+data = np.load("data.npy")
 data_count = len(data)
 data_mean = np.mean(data)
 data_sd = np.std(data)
@@ -49,7 +48,6 @@ print(f"The data mean is {data_mean:.2f}, while the standard deviation is {data_
 
 ```
 
-Of course, every good data scientist wants to *see* the data, so you whip up a `Seaborn` histogram to get the full cookie picture:
 
 ```{python}
 #| echo: true
@@ -57,16 +55,13 @@ Of course, every good data scientist wants to *see* the data, so you whip up a `
 #| fig-align: center
 
 sns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2)
-plt.xlabel('x = number of cookies')
+plt.xlabel('x')
 plt.ylabel('count')
-plt.title('cookie data')
+plt.title('data')
 plt.show()
 
 ```
 
-Three clusters! One has a peak around 10 cookies, the second around 15, and the third has a peak near a whopping 21 cookies. Clearly, there are distinct groups of cookie lovers here, which makes this dataset is a perfect candidate for a *Gaussian mixture model* (*GMM*), which seeks to identify clusters in data.
-
-# Fitting a GMM in scikit-learn
 
 ```{python}
 #| echo: true
@@ -103,7 +98,7 @@ mesh = np.linspace(8, 22, num=200)
 
 sns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat="density", label="data")
 plt.plot(mesh, mixture_pdf(mesh), color=blue, label="GMM PDF")
-plt.xlabel("x = number of cookies")
+plt.xlabel("x")
 plt.ylabel("density")
 plt.title("data + GMM PDF")
 plt.legend()

@@ -9,9 +9,8 @@ probs = [0.2, 0.7, 0.1]
 n_samples = 1000
 y_samples = np.random.choice(params, size=n_samples, p=probs)
 x_samples = np.array([ss.norm(**param).rvs() for param in y_samples])
-x_samples = np.round(x_samples)
 
-np.save('cookie_data.npy', x_samples)
+np.save('data.npy', x_samples)
 
 # mesh = np.linspace(-3, 13, num=200)
 # _, ax = plt.subplots()
