@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../img/fav-new.png" rel="icon" type="image/png">
+<link href="../../img/fav.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -233,8 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You’re a data scientist at a cookie convention. What do you do? Survey the participants and fit a Gaussian mixture model, of course. 🍪 😋</p>
 <section id="exploratory-cookie-analysis" class="level1">
 <h1>Exploratory cookie analysis</h1>
-<p>You surveyed 1,000 cookie convention attendees to find out just how many cookies they could devour in a single day. Naturally, being the conscientious data scientist you are, you loaded the results into a <code>NumPy</code> array and fired up <code>Python</code> to crunch some summary statistics:</p>
-<div id="1471da1b" class="cell" data-execution_count="2">
+<p>You surveyed 1,000 cookie convention attendees to find out just how many cookies they could devour in a single day. Naturally, being the conscientious data scientist you are, you fired up <code>Python</code> and loaded the results into a <code>NumPy</code> array to crunch some summary statistics:</p>
+<div id="359e7cca" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.load(<span class="st">"cookie_data.npy"</span>)</span>
@@ -253,7 +253,7 @@ The data mean is 14.63, while the standard deviation is 3.42.</code></pre>
 </div>
 </div>
 <p>Of course, every good data scientist wants to <em>see</em> the data, so you whip up a <code>Seaborn</code> histogram to get the full cookie picture:</p>
-<div id="b980e399" class="cell" data-execution_count="3">
+<div id="07ae1ccd" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>data, color<span class="op">=</span>yellow, alpha<span class="op">=</span><span class="dv">1</span>, ec<span class="op">=</span>grey, zorder<span class="op">=</span><span class="dv">2</span>)</span>
@@ -274,7 +274,7 @@ The data mean is 14.63, while the standard deviation is 3.42.</code></pre>
 </section>
 <section id="fitting-a-gmm-in-scikit-learn" class="level1">
 <h1>Fitting a GMM in scikit-learn</h1>
-<div id="f4046efd" class="cell" data-execution_count="4">
+<div id="d9973270" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.mixture <span class="im">import</span> GaussianMixture</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
@@ -296,11 +296,11 @@ Standard deviations: [1.02742606 0.60258656 1.91702651]
 Weights: [0.23449983 0.10264522 0.66285495]</code></pre>
 </div>
 </div>
-<div id="abd31142" class="cell" data-execution_count="5">
+<div id="4eff364a" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mixture_pdf(x):  </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">sum</span>([weight <span class="op">*</span> ss.norm(<span class="op">**</span>param).pdf(x) <span class="cf">for</span> weight, param <span class="kw">in</span> <span class="bu">zip</span>(weights, params)])</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> np.linspace(<span class="dv">7</span>, <span class="dv">23</span>, num<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> np.linspace(<span class="dv">8</span>, <span class="dv">22</span>, num<span class="op">=</span><span class="dv">200</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>data, color<span class="op">=</span>yellow, alpha<span class="op">=</span><span class="fl">0.5</span>, ec<span class="op">=</span>grey, zorder<span class="op">=</span><span class="dv">2</span>, stat<span class="op">=</span><span class="st">"density"</span>, label<span class="op">=</span><span class="st">"data"</span>)</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.plot(mesh, mixture_pdf(mesh), color<span class="op">=</span>blue, label<span class="op">=</span><span class="st">"GMM PDF"</span>)</span>
