@@ -4,6 +4,7 @@ date: "2025-09-30"
 toc: true
 categories: [Python, SciPy, Information theory, Entropy, Probability, Surprisal]
 image: "thumbnail.png"
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.

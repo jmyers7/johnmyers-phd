@@ -4,6 +4,7 @@ date: "2025-09-24"
 toc: true
 categories: [R, Probability, Statistics, Probabilistic graphical models, Mixture models, EM algorithm]
 image: "thumbnail.png"
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
@@ -36,7 +37,7 @@ white = "#E5E5E5"
 
 from sklearn.mixture import GaussianMixture
 
-data = np.load("../gmm-1/data.npy")
+data = np.load("../../data/gmm-data.npy")
 X = data.reshape(-1, 1)
 
 gmm = GaussianMixture(n_components=3, random_state=42)

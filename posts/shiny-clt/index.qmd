@@ -4,6 +4,7 @@ date: "2025-09-25"
 toc: true
 categories: [R, Shiny, Python, SciPy, Reticulate, Interactive, Probability, Statistics, Central Limit Theorem]
 image: "thumbnail.png"
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.

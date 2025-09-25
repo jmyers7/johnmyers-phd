@@ -8,6 +8,8 @@ listing:
 title-block-banner: false
 ---
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.
+
 ![](img/h-bar.svg){fig-align='center' width=80%}
 
 ::: {#posts}

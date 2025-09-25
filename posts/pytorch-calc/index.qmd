@@ -4,6 +4,7 @@ date: "2025-09-27"
 toc: true
 categories: [Python, PyTorch, Deep Learning, Neural networks, Tensors, Calculus, Linear algebra]
 image: "thumbnail.png"
+draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.

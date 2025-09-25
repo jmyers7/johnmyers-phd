@@ -4,6 +4,7 @@ date: "2025-09-22"
 toc: true
 categories: [R, Probability, Statistics, Probabilistic graphical models, Mixture models, Gaussian mixture models]
 image: "thumbnail.png"
+draft: true
 ---
 
 A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this model assumes that observed data arises from a combination of several underlying normal distributions, each contributing to the overall distribution with different weights and parameters. Rather than forcing all data points to conform to a single bell curve, a gaussian mixture allows for multiple clusters, each governed by its own mean, variance, and relative importance in the mixture.
@@ -39,7 +40,7 @@ white = "#E5E5E5"
 #| code-fold: true 
 #| fig-align: center
 
-data = np.load("data.npy")
+data = np.load("../../data/gmm-data.npy")
 
 sns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2, stat="density")
 plt.xlabel('x')
@@ -48,6 +49,10 @@ plt.show()
 
 ```
 
-Three clusters are immediately evident: the first with a peak around $x=10$, the second around $x=15$, and the third near $x=21$.
+Three clusters are immediately evident: the first with a peak around $x=10$, the second around $x=15$, and the third near $x=21$. The presence of three clusters with well-defined peaks suggests that the data might be modeled well by a mixture of *three* gaussians.
 
-This synthetic dataset contains 1,000 observations sampled from a mixture of gaussians, also called a <span style="color: #FFC300;">*gaussian mixture model*</span> or <span style="color: #FFC300;">*GMM*</span>. In this introductory post, I'll explain the mathematical and graphical structure of the GMM that generated this data. Since I fixed the GMM parameters before sampling, we know the true underlying model. In a follow-up post, I'll tackle the inverse problem: given only the dataset, how can we estimate the parameters and recover the original GMM?
+Indeed, this synthetic dataset contains 1,000 observations sampled from a three-component mixture of gaussians, also called a <span style="color: #FFC300;">*gaussian mixture model*</span> or <span style="color: #FFC300;">*GMM*</span>. In this introductory post, I'll explain the mathematical and graphical structure of the GMM that generated this data. Since I fixed the GMM parameters before sampling, we know the true underlying model. In a follow-up post, I'll tackle the inverse problem: given only the dataset, how can we estimate the parameters and recover the original GMM?
+
+## Graphical structure
+
+## Mathematical structure
