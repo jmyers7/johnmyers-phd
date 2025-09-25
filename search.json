@@ -4,7 +4,7 @@
     "href": "writings.html",
     "title": "john myers, ph.d.",
     "section": "",
-    "text": "Einstein does deep learning\n\n\n\nPython\n\nPyTorch\n\nDeep Learning\n\nNeural networks\n\nTensors\n\nLinear algebra\n\n\n\n\n\n\n\n\n\nOct 2, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is information theory? (with SciPy!)\n\n\n\nPython\n\nSciPy\n\nInformation theory\n\nEntropy\n\nProbability\n\nSurprisal\n\n\n\n\n\n\n\n\n\nSep 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPyTorch can do your calculus homework\n\n\n\nPython\n\nPyTorch\n\nDeep Learning\n\nNeural networks\n\nTensors\n\nCalculus\n\nLinear algebra\n\n\n\n\n\n\n\n\n\nSep 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n“Shiny” Central Limit Theorem\n\n\n\nR\n\nShiny\n\nPython\n\nSciPy\n\nReticulate\n\nInteractive\n\nProbability\n\nStatistics\n\nCentral Limit Theorem\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGaussians all mixed up\n\n\n\nR\n\nProbability\n\nStatistics\n\nProbabilistic graphical models\n\n\n\n\n\n\n\n\n\nSep 22, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Einstein does deep learning\n\n\n\nPython\n\nPyTorch\n\nDeep Learning\n\nNeural networks\n\nTensors\n\nLinear algebra\n\n\n\n\n\n\n\n\n\nOct 2, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is information theory? (with SciPy!)\n\n\n\nPython\n\nSciPy\n\nInformation theory\n\nEntropy\n\nProbability\n\nSurprisal\n\n\n\n\n\n\n\n\n\nSep 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPyTorch can do your calculus homework\n\n\n\nPython\n\nPyTorch\n\nDeep Learning\n\nNeural networks\n\nTensors\n\nCalculus\n\nLinear algebra\n\n\n\n\n\n\n\n\n\nSep 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n“Shiny” Central Limit Theorem\n\n\n\nR\n\nShiny\n\nPython\n\nSciPy\n\nReticulate\n\nInteractive\n\nProbability\n\nStatistics\n\nCentral Limit Theorem\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGaussians all mixed up: expectation maximization\n\n\n\nR\n\nProbability\n\nStatistics\n\nProbabilistic graphical models\n\nMixture models\n\nEM algorithm\n\n\n\n\n\n\n\n\n\nSep 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGaussians all mixed up: a first look\n\n\n\nR\n\nProbability\n\nStatistics\n\nProbabilistic graphical models\n\nMixture models\n\n\n\n\n\n\n\n\n\nSep 22, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/25-fa-analysis.html",
@@ -21,9 +21,16 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
   },
   {
-    "objectID": "posts/scipy-info/index.html",
-    "href": "posts/scipy-info/index.html",
-    "title": "What is information theory? (with SciPy!)",
+    "objectID": "posts/gmm-1/index.html",
+    "href": "posts/gmm-1/index.html",
+    "title": "Gaussians all mixed up: a first look",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.\n\nHeader 1\n\n\nCode\ndata = np.load(\"data.npy\")\ndata_count = len(data)\ndata_mean = np.mean(data)\ndata_sd = np.std(data)\n\nprint(f\"There are {data_count} observations in the data.\")\nprint(f\"The first five observations are {data[:5]}.\")\nprint(f\"The data mean is {data_mean:.2f}, while the standard deviation is {data_sd:.2f}.\")\n\n\nThere are 1000 observations in the data.\nThe first five observations are [15.355402   20.33232782 15.7603957  16.22117149 10.55979045].\nThe data mean is 14.65, while the standard deviation is 3.42.\n\n\n\n\nCode\nsns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2)\nplt.xlabel('x')\nplt.ylabel('count')\nplt.title('data')\nplt.show()\n\n\n\n\n\n\n\n\n\n\nfrom sklearn.mixture import GaussianMixture\n\nX = data.reshape(-1, 1)\n\ngmm = GaussianMixture(n_components=3, random_state=42)\ngmm.fit(X)\n\nmeans = gmm.means_.flatten()\nstds = np.sqrt(gmm.covariances_).flatten()\nweights = gmm.weights_\nparams = [{\"loc\": mu, \"scale\": sigma} for mu, sigma in zip(means, stds)]\n\nprint(\"Means:\", means)\nprint(\"Standard deviations:\", stds)\nprint(\"Weights:\", weights)\n\nMeans: [10.16744909 15.26301795 20.95058326]\nStandard deviations: [0.98382948 1.95068917 0.51278335]\nWeights: [0.23252679 0.66703867 0.10043454]\n\n\n\ndef mixture_pdf(x):  \n  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, params)])\n\nmesh = np.linspace(8, 22, num=200)\n\nsns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat=\"density\", label=\"data\")\nplt.plot(mesh, mixture_pdf(mesh), color=blue, label=\"GMM PDF\")\nplt.xlabel(\"x\")\nplt.ylabel(\"density\")\nplt.title(\"data + GMM PDF\")\nplt.legend()\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/gmm-2/index.html",
+    "href": "posts/gmm-2/index.html",
+    "title": "Gaussians all mixed up: expectation maximization",
     "section": "",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
   },
@@ -35,11 +42,11 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
   },
   {
-    "objectID": "posts/mixture/index.html",
-    "href": "posts/mixture/index.html",
-    "title": "Gaussians all mixed up",
+    "objectID": "posts/scipy-info/index.html",
+    "href": "posts/scipy-info/index.html",
+    "title": "What is information theory? (with SciPy!)",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.\n\nHeader 1\n\n\nCode\ndata = np.load(\"data.npy\")\ndata_count = len(data)\ndata_mean = np.mean(data)\ndata_sd = np.std(data)\n\nprint(f\"There are {data_count} observations in the data.\")\nprint(f\"The first five observations are {data[:5]}.\")\nprint(f\"The data mean is {data_mean:.2f}, while the standard deviation is {data_sd:.2f}.\")\n\n\nThere are 1000 observations in the data.\nThe first five observations are [15.355402   20.33232782 15.7603957  16.22117149 10.55979045].\nThe data mean is 14.65, while the standard deviation is 3.42.\n\n\n\n\nCode\nsns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2)\nplt.xlabel('x')\nplt.ylabel('count')\nplt.title('data')\nplt.show()\n\n\n\n\n\n\n\n\n\n\nfrom sklearn.mixture import GaussianMixture\n\nX = data.reshape(-1, 1)\n\ngmm = GaussianMixture(n_components=3, random_state=42)\ngmm.fit(X)\n\nmeans = gmm.means_.flatten()\nstds = np.sqrt(gmm.covariances_).flatten()\nweights = gmm.weights_\nparams = [{\"loc\": mu, \"scale\": sigma} for mu, sigma in zip(means, stds)]\n\nprint(\"Means:\", means)\nprint(\"Standard deviations:\", stds)\nprint(\"Weights:\", weights)\n\nMeans: [10.16744909 15.26301795 20.95058326]\nStandard deviations: [0.98382948 1.95068917 0.51278335]\nWeights: [0.23252679 0.66703867 0.10043454]\n\n\n\ndef mixture_pdf(x):  \n  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, params)])\n\nmesh = np.linspace(8, 22, num=200)\n\nsns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat=\"density\", label=\"data\")\nplt.plot(mesh, mixture_pdf(mesh), color=blue, label=\"GMM PDF\")\nplt.xlabel(\"x\")\nplt.ylabel(\"density\")\nplt.title(\"data + GMM PDF\")\nplt.legend()\nplt.tight_layout()\nplt.show()"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
   },
   {
     "objectID": "posts/shiny-clt/index.html",
