@@ -4,7 +4,7 @@
     "href": "writings.html",
     "title": "john myers, ph.d.",
     "section": "",
-    "text": "Einstein does deep learning\n\n\n\nPython\n\nPyTorch\n\nDeep Learning\n\nNeural networks\n\nTensors\n\nLinear algebra\n\n\n\n\n\n\n\n\n\nOct 2, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is information theory? (with SciPy!)\n\n\n\nPython\n\nSciPy\n\nInformation theory\n\nEntropy\n\nProbability\n\nSurprisal\n\n\n\n\n\n\n\n\n\nSep 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nPyTorch can do your calculus homework\n\n\n\nPython\n\nPyTorch\n\nDeep Learning\n\nNeural networks\n\nTensors\n\nCalculus\n\nLinear algebra\n\n\n\n\n\n\n\n\n\nSep 27, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n“Shiny” Central Limit Theorem\n\n\n\nR\n\nShiny\n\nPython\n\nSciPy\n\nReticulate\n\nInteractive\n\nProbability\n\nStatistics\n\nCentral Limit Theorem\n\n\n\n\n\n\n\n\n\nSep 25, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGaussians all mixed up: expectation maximization\n\n\n\nR\n\nProbability\n\nStatistics\n\nProbabilistic graphical models\n\nMixture models\n\nEM algorithm\n\n\n\n\n\n\n\n\n\nSep 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nGaussians all mixed up: a first look\n\n\n\nR\n\nProbability\n\nStatistics\n\nProbabilistic graphical models\n\nMixture models\n\nGaussian mixture models\n\n\n\n\n\n\n\n\n\nSep 22, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "courses/25-fa-analysis.html",
@@ -12,55 +12,6 @@
     "title": "mat347 analysis, fall 2025",
     "section": "",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida. Vivamus euismod, nisi a tristique dictum, sapien libero tempor nulla, sit amet dignissim justo elit sit amet lectus. Sed euismod risus a felis facilisis, in tincidunt purus luctus."
-  },
-  {
-    "objectID": "posts/ein-dl/index.html",
-    "href": "posts/ein-dl/index.html",
-    "title": "Einstein does deep learning",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
-  },
-  {
-    "objectID": "posts/gmm-1/index.html",
-    "href": "posts/gmm-1/index.html",
-    "title": "Gaussians all mixed up: a first look",
-    "section": "",
-    "text": "A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this model assumes that observed data arises from a combination of several underlying normal distributions, each contributing to the overall distribution with different weights and parameters. Rather than forcing all data points to conform to a single bell curve, a gaussian mixture allows for multiple clusters, each governed by its own mean, variance, and relative importance in the mixture.\nThe mathematical foundation rests on the idea that any data point could have originated from any of the component gaussians, but with varying probabilities. This creates a rich framework for modeling complex, multi-modal distributions that frequently appear in real-world scenarios. Consider, for example, the heights of adults in a population that includes both men and women, or the distribution of pixel intensities in an image containing multiple distinct objects. A single gaussian would poorly capture the true underlying structure, while a mixture model can naturally accommodate the multiple peaks and varying spreads that characterize such data. The beauty of this approach lies not only in its flexibility but also in its mathematical tractability, making it both theoretically sound and computationally feasible for a wide range of applications.\nFor example, suppose we were presented with the following data distribution, displayed here as a histogram:\n\n\n\n\n\n\n\n\n\nThree clusters are immediately evident: the first with a peak around \\(x=10\\), the second around \\(x=15\\), and the third near \\(x=21\\).\nThis synthetic dataset contains 1,000 observations sampled from a mixture of gaussians, also called a gaussian mixture model or GMM. In this introductory post, I’ll explain the mathematical and graphical structure of the GMM that generated this data. Since I fixed the GMM parameters before sampling, we know the true underlying model. In a follow-up post, I’ll tackle the inverse problem: given only the dataset, how can we estimate the parameters and recover the original GMM?"
-  },
-  {
-    "objectID": "posts/gmm-2/index.html",
-    "href": "posts/gmm-2/index.html",
-    "title": "Gaussians all mixed up: expectation maximization",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida.\n\nfrom sklearn.mixture import GaussianMixture\n\ndata = np.load(\"../gmm-1/data.npy\")\nX = data.reshape(-1, 1)\n\ngmm = GaussianMixture(n_components=3, random_state=42)\ngmm.fit(X)\n\nmeans = gmm.means_.flatten()\nstds = np.sqrt(gmm.covariances_).flatten()\nweights = gmm.weights_\nparams = [{\"loc\": mu, \"scale\": sigma} for mu, sigma in zip(means, stds)]\n\nprint(\"Means:\", means)\nprint(\"Standard deviations:\", stds)\nprint(\"Weights:\", weights)\n\nMeans: [10.16744909 15.26301795 20.95058326]\nStandard deviations: [0.98382948 1.95068917 0.51278335]\nWeights: [0.23252679 0.66703867 0.10043454]\n\n\n\ndef mixture_pdf(x):  \n  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, params)])\n\nmesh = np.linspace(8, 22, num=200)\n\nsns.histplot(data=data, color=yellow, alpha=0.5, ec=grey, zorder=2, stat=\"density\", label=\"data\")\nplt.plot(mesh, mixture_pdf(mesh), color=blue, label=\"GMM PDF\")\nplt.xlabel(\"x\")\nplt.ylabel(\"density\")\nplt.title(\"data + GMM PDF\")\nplt.legend()\nplt.tight_layout()\nplt.show()"
-  },
-  {
-    "objectID": "posts/pytorch-calc/index.html",
-    "href": "posts/pytorch-calc/index.html",
-    "title": "PyTorch can do your calculus homework",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
-  },
-  {
-    "objectID": "posts/scipy-info/index.html",
-    "href": "posts/scipy-info/index.html",
-    "title": "What is information theory? (with SciPy!)",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
-  },
-  {
-    "objectID": "posts/shiny-clt/index.html",
-    "href": "posts/shiny-clt/index.html",
-    "title": "“Shiny” Central Limit Theorem",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec eros eget nisl posuere fermentum. Phasellus vitae augue nec justo commodo gravida."
-  },
-  {
-    "objectID": "posts/shiny-clt/index.html#header-1",
-    "href": "posts/shiny-clt/index.html#header-1",
-    "title": "“Shiny” Central Limit Theorem",
-    "section": "Header 1",
-    "text": "Header 1\nLoad R libraries:\n\nlibrary(\"ggplot2\")\nlibrary(\"latex2exp\")\nlibrary(\"reticulate\") \ncondaenv.name &lt;- \"default-env\"\nuse_condaenv(condaenv.name, required = TRUE)\n\nLoad Python libraries:\n\nimport scipy.stats as ss\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nConstruct the PDF for the mixture of Gaussians:\n\nweights &lt;- c(0.2, 0.3, 0.1, 0.4)\nmeans &lt;- c(0, 3, 5, 10)\nsds &lt;- c(1, 0.75, 0.5, 2)\n\nmixture.pdf &lt;- function(x) {\n  rowSums(\n    sapply(\n      X = seq_along(weights),\n      FUN = function(i) weights[i] * dnorm(x, mean = means[i], sd = sds[i])\n    )\n  )\n}\n\nPlot the PDF of the mixture of Gaussians:\n\n\nCode\nggplot(data.frame(x = c(-4, 14)), aes(x)) +\n  stat_function(fun = mixture.pdf, color = yellow, linewidth = 1, n = 250) +\n  labs(y = \"density\", title = \"mixture of gaussians\")\n\n\n\n\n\n\n\n\n\nDefine an R function for plotting sampling distributions of the mean:\n\nplot.sampling.dist &lt;- function(df.sample, n.sample, mu, sigma, bins = 50, alpha = 0.5) {\n  \n  ggplot(df.sample, aes(x = xbar)) +\n    geom_histogram(\n      aes(y = after_stat(density)),\n      color = grey,\n      bins = bins,\n      alpha = alpha,\n      fill = yellow\n    ) +\n    stat_density(\n      aes(color = \"data\"),\n      geom = \"line\",\n      linewidth = 1\n    ) +\n    stat_function(\n      aes(color = \"normal\"),\n      fun = function(x) dnorm(x, mean = mu, sd = sigma),\n      linewidth = 1   \n    ) + \n    scale_color_manual(\n      name = NULL,\n      values = c(\"data\" = yellow, \"normal\" = blue)\n    ) +\n    labs(\n      x = TeX(\"$\\\\bar{x}$\"),\n      title = TeX(paste0(\"sampling distribution for $\\\\bar{X}_{\", n.sample, \"}$\"))\n    )\n}\n\nDefine an R function for generating a sample for the sample mean of the mixture of Gaussians:\n\ngenerate.mixture.sample &lt;- function(n.sample, n.replicates, n.components, weights, means, sds) {\n  \n  components &lt;- sample(\n    1:n.components,\n    size = n.replicates * n.sample,\n    replace = TRUE,\n    prob = weights\n  )\n\n  matrix.sample &lt;- matrix(\n    rnorm(n.replicates * n.sample, mean = means[components], sd = sds[components]),\n    nrow = n.replicates,\n    ncol = n.sample\n  )\n\n  df.sample &lt;- data.frame(xbar = rowMeans(matrix.sample))\n  \n  return(df.sample)\n}\n\nDefine an R function for computing the mean and standard deviation of the mixture of Gaussians:\n\ngenerate.mixture.stats &lt;- function(n.sample, weights, means, sds) {\n\n  second.moments &lt;- means ** 2 + sds ** 2\n  mu &lt;- as.numeric(weights %*% means)\n  sigma &lt;- sqrt(as.numeric(weights %*% second.moments - (weights %*% means) ** 2) / n.sample)\n  \n  return(c(mu = mu, sigma = sigma))\n}\n\nPlot the sample mean \\(\\overline{X}_3\\) of the mixture of Gaussians:\n\n\nCode\nn.sample &lt;- 3\nn.replicates &lt;- 1000\nn.components &lt;- 4\n\ndf.sample &lt;- generate.mixture.sample(n.sample, n.replicates, n.components, weights, means, sds)\nstats &lt;- generate.mixture.stats(n.sample, weights, means, sds)\n\nplot.sampling.dist(df.sample, n.sample, stats[\"mu\"], stats[\"sigma\"])\n\n\n\n\n\n\n\n\n\nPlot the sample mean \\(\\overline{X}_{10}\\) of the mixture of Gaussians:\n\n\nCode\nn.sample &lt;- 10\n\ndf.sample &lt;- generate.mixture.sample(n.sample, n.replicates, n.components, weights, means, sds)\nstats &lt;- generate.mixture.stats(n.sample, weights, means, sds)\n\nplot.sampling.dist(df.sample, n.sample, stats[\"mu\"], stats[\"sigma\"])\n\n\n\n\n\n\n\n\n\nPlot the sample mean \\(\\overline{X}_{100}\\) of the mixture of Gaussians:\n\n\nCode\nn.sample &lt;- 100\n\ndf.sample &lt;- generate.mixture.sample(n.sample, n.replicates, n.components, weights, means, sds)\nstats &lt;- generate.mixture.stats(n.sample, weights, means, sds)\n\nplot.sampling.dist(df.sample, n.sample, stats[\"mu\"], stats[\"sigma\"])\n\n\n\n\n\n\n\n\n\nPlot the PDF of a log-normal distribution in Python:\n\n\nCode\nmeanlog = 1\nsdlog = 0.75\nX = ss.lognorm(s=sdlog, scale=np.exp(meanlog))\n\nlognorm_mean = X.mean()\n\nx_grid = np.linspace(0, 13, num=250)\n\n_, ax = plt.subplots()\nax.plot(x_grid, X.pdf(x_grid), color=yellow)\nax.set_title('log-normal')\nax.set_xlabel('x')\nax.set_ylabel('density')\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "about.html",
