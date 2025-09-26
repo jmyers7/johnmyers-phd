@@ -269,7 +269,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this is a probabilistic model that assumes observed data arises from a combination of several underlying normal distributions, each contributing to the overall distribution with different weights and parameters. Rather than forcing all data points to conform to a single bell curve, a gaussian mixture allows for multiple clusters, each governed by its own mean, variance, and relative importance in the mixture. This creates a framework for modeling complex, multi-modal distributions that frequently appear in real-world scenarios. Consider, for example, the heights of adults in a population that includes both men and women, or the distribution of pixel intensities in an image containing multiple distinct objects. A single gaussian would poorly capture the true underlying structure, while a mixture model can naturally accommodate the multiple peaks and varying spreads that characterize such data. The beauty of this approach lies not only in its flexibility but also in its mathematical tractability, making it both theoretically sound and computationally feasible for a wide range of applications.</p>
 <p>For example, suppose we were presented with the following data distribution, displayed here as a histogram:</p>
-<div id="91e36a35" class="cell" data-execution_count="2">
+<div id="7cdbfb73" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -332,11 +332,11 @@ p(y) = \begin{cases}
 <section id="marginal-pdfs" class="level2">
 <h2 class="anchored" data-anchor-id="marginal-pdfs">Marginal PDFs</h2>
 <p>The marginal distribution of <span class="math inline">\(X\)</span> follows directly from the law of total probability: <span id="eq-gmm-marg-pdf"><span class="math display">\[
-f(x) = \sum_{k=1}^m p(y)f(x|y)  = \sum_{k=1}^m \phi_k f(x|k),
+f(x) = \sum_{y=1}^m p(y)f(x|y)  = \sum_{y=1}^m \phi_y f(x|y),
 \tag{2}\]</span></span></p>
 <p>where the conditional densities are normal:</p>
 <p><span class="math display">\[
-f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-\mu_k}{\sigma_k}\right)^2\right].
+f(x|y) = \frac{1}{\sigma_y\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-\mu_y}{\sigma_y}\right)^2\right].
 \]</span></p>
 <p>Thus, the marginal density <span class="math inline">\(f(x)\)</span> is a <a href="https://en.wikipedia.org/wiki/Convex_combination" target="_blank">convex linear combination</a> of normal densities.</p>
 <p>Now let’s examine the specific <span class="math inline">\(3\)</span>-component GMM that generated our dataset. The component parameters are:</p>
@@ -349,7 +349,7 @@ f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-
 \]</span></p>
 <p>Notice that the middle component (centered at 15) dominates with 70% weight, while the outer components contribute 20% and 10% respectively.</p>
 <p>Let’s implement and visualize the component gaussians and the marginal PDF in <code>Python</code>. First, let’s load the parameters:</p>
-<div id="c59751f0" class="cell" data-execution_count="3">
+<div id="cf494e45" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>norm_params <span class="op">=</span> [</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"loc"</span>: <span class="dv">10</span>, <span class="st">"scale"</span>: <span class="dv">1</span>},</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  {<span class="st">"loc"</span>: <span class="dv">15</span>, <span class="st">"scale"</span>: <span class="dv">2</span>},</span>
@@ -358,16 +358,16 @@ f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.7</span>, <span class="fl">0.1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we plot the individual components, each scaled by its weight:</p>
-<div id="1faf9cc7" class="cell" data-execution_count="4">
+<div id="a8af59ef" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mesh <span class="op">=</span> np.linspace(<span class="dv">7</span>, <span class="dv">23</span>, num<span class="op">=</span><span class="dv">200</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, (param, weight) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(norm_params, weights)):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y, (param, weight) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>(norm_params, weights)):</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  X <span class="op">=</span> norm(<span class="op">**</span>param)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  plt.plot(mesh, weight <span class="op">*</span> X.pdf(mesh), color<span class="op">=</span>colors[k], label<span class="op">=</span><span class="ss">f"component </span><span class="sc">{</span>k<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  plt.plot(mesh, weight <span class="op">*</span> X.pdf(mesh), color<span class="op">=</span>colors[y], label<span class="op">=</span><span class="ss">f"component </span><span class="sc">{</span>y<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"density"</span>)</span>
@@ -385,12 +385,12 @@ f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-
 </div>
 </div>
 <p>The marginal PDF implementation follows <a href="#eq-gmm-marg-pdf" class="quarto-xref">Equation&nbsp;2</a> directly:</p>
-<div id="c62e1c38" class="cell" data-execution_count="5">
+<div id="e5edf01c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> marginal_pdf(x):  </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">sum</span>([weight <span class="op">*</span> norm(<span class="op">**</span>param).pdf(x) <span class="cf">for</span> weight, param <span class="kw">in</span> <span class="bu">zip</span>(weights, norm_params)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we plot the theoretical marginal PDF against the empirical histogram:</p>
-<div id="5eb28702" class="cell" data-execution_count="6">
+<div id="af966362" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.load(<span class="st">"../../data/gmm-data.npy"</span>)</span>
@@ -421,7 +421,7 @@ f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-
 Y \sim \mathcal{C}at(0.2, 0.7, 0.1),
 \]</span></p>
 <p>and then for each <span class="math inline">\(y\)</span> we sample from the gaussian <span class="math inline">\(X|Y=y\)</span>. We check that our new generated sample coincides with the original dataset:</p>
-<div id="4c6e5033" class="cell" data-execution_count="7">
+<div id="d82574cd" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>) <span class="co"># Needed to replicate the original dataset</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n_samples <span class="op">=</span> <span class="dv">1000</span></span>
