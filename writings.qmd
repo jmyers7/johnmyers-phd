@@ -8,7 +8,7 @@ listing:
 title-block-banner: false
 ---
 
-My writings gravitate toward the intersection of tech, data, and math: three domains that increasingly define our modern world. Technology provides the computational power to tackle complex problems, data gives us the raw material to understand patterns and make predictions, and mathematics supplies the theoretical framework that makes it all rigorous and reliable. I explore these connections through a tri-lingual approach using mathematical theory, `Python` implementations, and `R` code, with posts ranging from theoretical and technical deep-dives to practical applications in business, finance, insurance, and risk management, or anything else that catches my interests.
+My writings explore the crossroads of tech, data, and math. I approach these connections through mathematical theory, `Python`, and `R`, with posts ranging from technical deep-dives to practical applications in industry, or anything else that sparks my curiosity.
 
 ![](img/h-bar.svg){fig-align='center' width=30%}
 
