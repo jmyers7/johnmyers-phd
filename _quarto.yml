@@ -18,8 +18,8 @@ website:
         href: writings.qmd
       - text: "teaching"
         menu:
-          - courses/25-fa-calculus-ii.qmd
-          - courses/25-fa-analysis.qmd
+          - teaching/calculus-ii-fa-25.qmd
+          - teaching/analysis-fa-25.qmd
       - text: "probabilistic machine learning"
         href: https://www.johnmyersmath.com/book
         target: _blank

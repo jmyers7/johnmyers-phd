@@ -1,0 +1,48 @@
+---
+title: "mat220 calculus II, fall 2025"
+title-block-banner: true
+---
+
+
+<table style="width:75%; margin-left:auto; margin-right:auto; margin-bottom: 50px;">
+  <tr>
+    <td>instructor:</td>
+    <td>john myers</td>
+  </tr>
+  <tr>
+    <td>office + office hours:</td>
+    <td>marano 175, 12-12:30 MWF</td>
+  </tr>
+  <tr>
+    <td>homework:</td>
+    <td><a href="https://www.webassign.net/" target="_blank">link</a></td>
+  </tr>
+  <tr>
+    <td>syllabus:</td>
+    <td><a href="https://drive.google.com/file/d/1QJXgkrPomyZBFSa09maq1YNKsED7JsAv/view?usp=drive_link" target="_blank">link</a></td>
+  </tr>
+</table>
+
+
+| week | date | topics | info + due dates
+|-|--|-----|---|
+| 6 | 09.29 mon || section 7.1 hw due @ 12:30pm
+| 5 | 09.26 fri | 7.1 integration by parts <a href="https://drive.google.com/file/d/1W4zJ2UTxDmFeCEeU6gEzUl2TbXOtIXga/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/19JN0RAkBkMB9fCDzkDhmu5kNXPTpst1T/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | quiz 5 on sections 5.4 and 5.5
+|| 09.25 thu | group exploration 5
+|| 09.24 wed | 7.1 integration by parts <a href="https://drive.google.com/file/d/1W4zJ2UTxDmFeCEeU6gEzUl2TbXOtIXga/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/19JN0RAkBkMB9fCDzkDhmu5kNXPTpst1T/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | section 5.5 hw due @ 12:30pm 
+|| 09.22 mon | 5.5 average value of a function <a href="https://drive.google.com/file/d/1BGnx6cQECkqhB4tsyc2pVJEISZzR9PfG/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1QYCcSao6PDscAB84_wa-K5aLflO1B_ZO/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | section 5.4 hw due @ 12:30pm 
+| 4 | 09.19 fri | 5.4 work <a href="https://drive.google.com/file/d/1P5uS75Yv_HH2xI-LS5cy9DTAnc6Ojiv6/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hu01cE5p9m9H4ZjUmwWqppcEeKmcLv_t/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | section 5.3 hw due @ 12:30pm<br>quiz 4 on section 5.3
+|| 09.18 thu | group exploration 4
+|| 09.17 wed | 5.4 work <a href="https://drive.google.com/file/d/1P5uS75Yv_HH2xI-LS5cy9DTAnc6Ojiv6/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hu01cE5p9m9H4ZjUmwWqppcEeKmcLv_t/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.15 mon | 5.3 volumes by cylindrical shells <a href="https://drive.google.com/file/d/1vamHwA6UyjjaKASqVgt6-V2X53ddqxu4/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1SGFCkv7sPgULNXvTvnbG3b4QFt97Vp4f/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | section 5.2 hw due @ 12:30pm 
+| 3 | 09.12 fri | 5.2 volumes, part 2 <a href="https://drive.google.com/file/d/1KGmQtTuoKR_5iw0TwDaXZ8FT7d7W-T-H/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1LDaTVT_ELjxQiA0CIos_pF8Vws0tf5op/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | quiz 3 on section 5.1
+|| 09.11 thu | group exploration 3
+|| 09.10 wed | 5.2 volumes, part 1 <a href="https://drive.google.com/file/d/175PA7nIyU_CYGualkNZYCISKu6a6ZmrF/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hkLTSigLS4VSYIdjPLMZC6BnYPX6Dg4O/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a><br>5.2 volumes, part 2 <a href="https://drive.google.com/file/d/1KGmQtTuoKR_5iw0TwDaXZ8FT7d7W-T-H/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1LDaTVT_ELjxQiA0CIos_pF8Vws0tf5op/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.08 mon | 5.2 volumes, part 1 <a href="https://drive.google.com/file/d/175PA7nIyU_CYGualkNZYCISKu6a6ZmrF/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hkLTSigLS4VSYIdjPLMZC6BnYPX6Dg4O/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | section 5.1 hw due @ 12:30pm  
+| 2 | 09.05 fri | 5.1 areas between curves <a href="https://drive.google.com/file/d/17osgFgPuFi9Qipo_aR56cUvRzq9KSA7o/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1vzS0MHk9dsMiDNiAzHLBDMt9ibfOz4AU/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.04 thu | group exploration 2 | calculus I review homework due @ 9:30am
+|| 09.03 wed | calculus I review, part 2 <a href="https://drive.google.com/file/d/1V7CTUnGHDY5Bhzws1fuV4FAsCp3OmOVy/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1JeKLb3Y-VIgRplpTzb58SyzAg2KwycXK/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+| 1 | 08.29 fri | no class
+|| 08.28 thu | no class
+|| 08.27 wed | calculus I review, part 1 <a href="https://drive.google.com/file/d/1J6Eimt6KIZ73oiVVswc6Su79tN60wd9e/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1GJ1UxOkutLdNhCvE0uIBMBouIqALZ8hm/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 08.25 mon | calculus I review, part 1 <a href="https://drive.google.com/file/d/1J6Eimt6KIZ73oiVVswc6Su79tN60wd9e/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1GJ1UxOkutLdNhCvE0uIBMBouIqALZ8hm/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>

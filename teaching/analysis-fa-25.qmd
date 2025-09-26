@@ -1,0 +1,40 @@
+---
+title: "mat347 analysis, fall 2025"
+title-block-banner: true
+---
+
+<table style="width:75%; margin-left:auto; margin-right:auto; margin-bottom: 50px;">
+  <tr>
+    <td>instructor:</td>
+    <td>john myers</td>
+  </tr>
+  <tr>
+    <td>office:</td>
+    <td>marano 175</td>
+  </tr>
+  <tr>
+    <td>office hours:</td>
+    <td>12-12:30 MWF</td>
+  </tr>
+  <tr>
+    <td>syllabus:</td>
+    <td><a href="https://drive.google.com/file/d/1EHFZiLx6-pJ76BjbNA53SzFokGBwlYki/view?usp=drive_link" target="_blank">link</a></td>
+  </tr>
+</table>
+
+| week | date | topics | info + due dates | 
+|-|--|-----|---|
+| 5 | 09.26 fri || <a href="https://drive.google.com/file/d/1Fu1J97THoJfijcx5wuNCjX4daSm62aYg/view?usp=drive_link" target="_blank">week 5 hw due</a>
+|| 09.24 wed | 2.2 the limit of a sequence, part 1 <a href="https://drive.google.com/file/d/1f2CBHJSwEhDQD3GwAq0iYs47SvyMfP5w/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1r2gbJh6B-_10OwjJ83Y-Sh4RTtBSH7kK/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1yz9y1gASL-n1iGoFHWu4Bs1Br3ego0te/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.22 mon | 1.5 cardinality, part 2 <a href="https://drive.google.com/file/d/1HzwbyxwXNb-ntPXszUARtc6LEWdoBwr4/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1FUsS7CX7z77OIINNDSh8xtkz4pyEY4rU/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1T9QBTVTnBb3dPomDVvDM03t83Zp8MKDQ/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a><br>2.2 the limit of a sequence, part 1 <a href="https://drive.google.com/file/d/1f2CBHJSwEhDQD3GwAq0iYs47SvyMfP5w/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1r2gbJh6B-_10OwjJ83Y-Sh4RTtBSH7kK/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1yz9y1gASL-n1iGoFHWu4Bs1Br3ego0te/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+| 4 | 09.19 fri | 1.5 cardinality, part 2 <a href="https://drive.google.com/file/d/1HzwbyxwXNb-ntPXszUARtc6LEWdoBwr4/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1FUsS7CX7z77OIINNDSh8xtkz4pyEY4rU/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1T9QBTVTnBb3dPomDVvDM03t83Zp8MKDQ/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | <a href="https://drive.google.com/file/d/1YmF6DdcPsYONWgtTx6FAwpTgZyjfghZN/view?usp=drive_link" target="_blank">week 4 hw due</a>
+|| 09.17 wed | 1.5 cardinality, part 1 <a href="https://drive.google.com/file/d/1S2GlPmaONK_tbus2D6hs1mfOKLJQvImT/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1QouFMzL07K8soWxiQwIMqAGSW6_gaHVG/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1kThpBG5obEhlG52NT-jzX-pEXzBUUDep/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.15 mon | 1.5 cardinality, part 1 <a href="https://drive.google.com/file/d/1S2GlPmaONK_tbus2D6hs1mfOKLJQvImT/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1QouFMzL07K8soWxiQwIMqAGSW6_gaHVG/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1kThpBG5obEhlG52NT-jzX-pEXzBUUDep/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+| 3 | 09.12 fri | 1.4 consequences of completeness <a href="https://drive.google.com/file/d/1iRSpIdTRIZgqSDXOC7en9Z3SFxKvwhk1/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1bHua9E-nwNRl-5NVZvopWap_OGLHm5x1/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1Z71KjqpB_I08p1Ehd-m9MXvd13FrNTCU/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | <a href="https://drive.google.com/file/d/159a_cI4OpZY9p8If4nZZfAzqjlBCygO9/view?usp=drive_link" target="_blank">week 2 & 3 homework due</a>
+|| 09.10 wed | 1.4 consequences of completeness <a href="https://drive.google.com/file/d/1iRSpIdTRIZgqSDXOC7en9Z3SFxKvwhk1/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1bHua9E-nwNRl-5NVZvopWap_OGLHm5x1/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1Z71KjqpB_I08p1Ehd-m9MXvd13FrNTCU/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.08 mon | 1.3 axiom of completeness <a href="https://drive.google.com/file/d/1PCvj2tu7NaMF48cIoS-OKOLje6euwTTP/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1-BgUQOZNCTbPDQ22UJjHorJ4u7asWkGq/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/12RXBIJMpSZ2qvSeQw3mfWwcPy3U-5mxi/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+| 2 | 09.05 fri | 1.2 some preliminaries<br>1.3 axiom of completeness <a href="https://drive.google.com/file/d/1PCvj2tu7NaMF48cIoS-OKOLje6euwTTP/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1-BgUQOZNCTbPDQ22UJjHorJ4u7asWkGq/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/12RXBIJMpSZ2qvSeQw3mfWwcPy3U-5mxi/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 09.03 wed | 1.2 some preliminaries <a href="https://drive.google.com/file/d/1v7wbFBsmiAoMhmN9xpk4ZRDDtlx7ujcB/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1W8Aqf68OYG_9EU3mCe1vOs2u5gLqQgKo/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1q_gUuAO91jRYKuK-Z-f-Wo8CfA9vJrFu/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+| 1 | 08.29 fri | no class
+|| 08.27 wed | 1.1 introduction <a href="https://drive.google.com/file/d/183FagTTzgeKfmpJPKaoA0BOx8kkVgHHz/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1uKWgl53_jtM6Y77f6OQUfpNVlzfwLNq8/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/18dcbTZfzEneXdpLzczOZAWZhR3vgx3D0/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a><br>1.2 some preliminaries <a href="https://drive.google.com/file/d/1v7wbFBsmiAoMhmN9xpk4ZRDDtlx7ujcB/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1W8Aqf68OYG_9EU3mCe1vOs2u5gLqQgKo/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1q_gUuAO91jRYKuK-Z-f-Wo8CfA9vJrFu/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
+|| 08.25 mon | 1.1 introduction <a href="https://drive.google.com/file/d/183FagTTzgeKfmpJPKaoA0BOx8kkVgHHz/view?usp=drive_link" target="_blank"><i class="bi bi-book"></i></a> <a href="https://drive.google.com/file/d/1uKWgl53_jtM6Y77f6OQUfpNVlzfwLNq8/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/18dcbTZfzEneXdpLzczOZAWZhR3vgx3D0/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a>
