@@ -12,7 +12,5 @@ My writings gravitate toward the intersection of tech, data, and math: three dom
 
 ![](img/h-bar.svg){fig-align='center' width=30%}
 
-Coming soon...
-
 ::: {#posts}
 :::

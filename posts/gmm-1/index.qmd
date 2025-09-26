@@ -4,12 +4,14 @@ date: "2025-09-26"
 toc: true
 categories: [Python, Probability, Statistics, Machine learning, Probabilistic graphical models, Mixture models, Gaussian mixture models]
 image: "thumbnail.png"
-draft: true
+# draft: true
 ---
+
+## Introduction
 
 A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this model assumes that observed data arises from a combination of several underlying normal distributions, each contributing to the overall distribution with different weights and parameters. Rather than forcing all data points to conform to a single bell curve, a gaussian mixture allows for multiple clusters, each governed by its own mean, variance, and relative importance in the mixture.
 
-The mathematical foundation rests on the idea that any data point could have originated from any of the component gaussians, but with varying probabilities. This creates a rich framework for modeling complex, multi-modal distributions that frequently appear in real-world scenarios. Consider, for example, the heights of adults in a population that includes both men and women, or the distribution of pixel intensities in an image containing multiple distinct objects. A single gaussian would poorly capture the true underlying structure, while a mixture model can naturally accommodate the multiple peaks and varying spreads that characterize such data. The beauty of this approach lies not only in its flexibility but also in its mathematical tractability, making it both theoretically sound and computationally feasible for a wide range of applications.
+The mathematical foundation rests on the idea that any data point could have originated from any of the component gaussians, but with varying probabilities. This creates a framework for modeling complex, multi-modal distributions that frequently appear in real-world scenarios. Consider, for example, the heights of adults in a population that includes both men and women, or the distribution of pixel intensities in an image containing multiple distinct objects. A single gaussian would poorly capture the true underlying structure, while a mixture model can naturally accommodate the multiple peaks and varying spreads that characterize such data. The beauty of this approach lies not only in its flexibility but also in its mathematical tractability, making it both theoretically sound and computationally feasible for a wide range of applications.
 
 For example, suppose we were presented with the following data distribution, displayed here as a histogram:
 
@@ -31,6 +33,7 @@ blue = "#3399FF"
 pink = "#FF3399"
 grey = "#121212"
 white = "#E5E5E5"
+colors = [yellow, blue, pink]
 
 ```
 
@@ -143,7 +146,7 @@ $$
 
 Notice that the middle component (centered at 15) dominates with 70% weight, while the outer components contribute 20% and 10% respectively.
 
-Let's implement and visualize this marginal PDF in `Python`:
+Let's implement and visualize the component gaussians and the marginal PDF in `Python`. First, let's load the parameters:
 
 ```{python}
 #| echo: true
@@ -159,6 +162,33 @@ weights = [0.2, 0.7, 0.1]
 
 ```
 
+Now, we plot the individual components, each scaled by its weight:
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats as ss
+
+mesh = np.linspace(7, 23, num=200)
+
+for k, (param, weight) in enumerate(zip(norm_params, weights)):
+  X = ss.norm(**param)
+  plt.plot(mesh, weight * X.pdf(mesh), color=colors[k], label=f"component {k+1}")
+
+plt.xlabel("x")
+plt.ylabel("density")
+plt.title("gaussian components")
+plt.legend()
+plt.tight_layout()
+plt.show()
+plt.close()
+
+```
+
 The marginal PDF implementation follows @eq-gmm-marg-pdf directly:
 
 ```{python}
@@ -166,25 +196,20 @@ The marginal PDF implementation follows @eq-gmm-marg-pdf directly:
 #| code-fold: false 
 #| fig-align: center
 
-import scipy.stats as ss
-
 def marginal_pdf(x):  
   return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, norm_params)])
 
 ```
 
-Finally, we can compare our theoretical marginal PDF against the empirical histogram:
+Finally, we plot the theoretical marginal PDF against the empirical histogram:
 
 ```{python}
 #| echo: true
 #| code-fold: false
 #| fig-align: center
 
-import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
 
-mesh = np.linspace(7, 23, num=200)
 data = np.load("../../data/gmm-data.npy")
 
 sns.histplot(data=data, color=yellow, alpha=0.25, ec=grey, zorder=2, stat="density", label="data")
@@ -204,3 +229,29 @@ The close agreement between our theoretical marginal PDF and the empirical histo
 
 Having established the theoretical foundation and visualized the marginal PDF, let's now examine the process behind generating our synthetic dataset.
 
+But this is easy. We first sample 1,000 values of $y$ from the categorical random variable
+
+$$
+Y \sim \mathcal{C}at(0.2, 0.7, 0.1),
+$$
+
+and then for each $y$ we sample from the gaussian $X|Y=y$. We check that our new generated sample coincides with the original dataset:
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+np.random.seed(42) # Needed to replicate the original dataset
+
+n_samples = 1000
+y_samples = np.random.choice([0, 1, 2], size=n_samples, p=weights)
+x_samples = np.array([ss.norm(**norm_params[y]).rvs() for y in y_samples])
+
+print("Are the datasets equal? " + ("Yes." if np.array_equal(data, x_samples) else "No."))
+
+```
+
+## Conclusion
+
+In this post we’ve built the GMM from the ground up, starting with its definition, exploring its conditional and marginal structure, and even sampling from it directly. But in practice, the real challenge is the inverse problem we mentioned earlier: we are usually given a dataset and want to fit a GMM by estimating its parameters. How do we tease apart the hidden components, estimate their weights, and recover the underlying mixture? That puzzle leads directly to one of the most beautiful iterative methods in statistics and machine learning: the <span style="color: #FFC300;">*expectation–maximization algorithm*</span>, which will be the focus of the next post in this series.
