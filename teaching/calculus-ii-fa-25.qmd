@@ -26,7 +26,8 @@ title-block-banner: true
 
 | week | date | topics | info + due dates
 |-|--|-----|---|
-| 6 | 09.29 mon || section 7.1 hw due @ 12:30pm
+| 6 | 10.01 wed || section 7.1 hw due @ 12:30pm
+|| 09.29 mon 
 | 5 | 09.26 fri | 7.1 integration by parts <a href="https://drive.google.com/file/d/1W4zJ2UTxDmFeCEeU6gEzUl2TbXOtIXga/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/19JN0RAkBkMB9fCDzkDhmu5kNXPTpst1T/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | quiz 5 on sections 5.4 and 5.5
 || 09.25 thu | group exploration 5
 || 09.24 wed | 7.1 integration by parts <a href="https://drive.google.com/file/d/1W4zJ2UTxDmFeCEeU6gEzUl2TbXOtIXga/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/19JN0RAkBkMB9fCDzkDhmu5kNXPTpst1T/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a> | section 5.5 hw due @ 12:30pm 
