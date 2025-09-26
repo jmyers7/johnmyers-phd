@@ -18,7 +18,7 @@ I'm a Ph.D. mathematician and university professor with a background that spans 
 
 ![](img/h-bar.svg){fig-align='center' width=30%}
 
-In addition to my role as a mathematician, I am also an educator who has taught 13 distinct college mathematics courses ranging from introductory calculus, to applied engineering mathematics, to upper-division theoretical courses, and have been recognized with teaching awards for my classroom work. Notable among these was a novel course in my dissertation research areas of commutative ring theory and algebraic geometry—topics not often taught at the undergraduate level—and a year-long course in probabilistic machine learning for which I wrote the textbook, available in the navigation bar at the top, and designed all the programming assignments.
+In addition to my role as a mathematician, I am also an educator who has taught 13 distinct college mathematics courses ranging from introductory calculus, to applied engineering mathematics, to upper-division theoretical courses, and have been recognized with teaching awards for my classroom work. Notable among these was a novel course in my dissertation research areas of commutative ring theory and algebraic geometry—topics not often taught at the undergraduate level—and a year-long course in probabilistic machine learning for which I wrote the textbook and developed the supporting infrastructure, all available in the navigation bar at the top.
 
 ![](img/h-bar-2.svg){fig-align='center' width=30%}
 
