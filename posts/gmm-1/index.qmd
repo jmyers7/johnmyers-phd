@@ -20,7 +20,6 @@ For example, suppose we were presented with the following data distribution, dis
 #| warning: false
 #| message: false
 
-import scipy.stats as ss
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -170,12 +169,12 @@ Now, we plot the individual components, each scaled by its weight:
 
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.stats as ss
+from scipy.stats import norm
 
 mesh = np.linspace(7, 23, num=200)
 
 for k, (param, weight) in enumerate(zip(norm_params, weights)):
-  X = ss.norm(**param)
+  X = norm(**param)
   plt.plot(mesh, weight * X.pdf(mesh), color=colors[k], label=f"component {k+1}")
 
 plt.xlabel("x")
@@ -196,7 +195,7 @@ The marginal PDF implementation follows @eq-gmm-marg-pdf directly:
 #| fig-align: center
 
 def marginal_pdf(x):  
-  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, norm_params)])
+  return sum([weight * norm(**param).pdf(x) for weight, param in zip(weights, norm_params)])
 
 ```
 
@@ -245,7 +244,7 @@ np.random.seed(42) # Needed to replicate the original dataset
 
 n_samples = 1000
 y_samples = np.random.choice([0, 1, 2], size=n_samples, p=weights)
-x_samples = np.array([ss.norm(**norm_params[y]).rvs() for y in y_samples])
+x_samples = np.array([norm(**norm_params[y]).rvs() for y in y_samples])
 
 print("Are the datasets equal? " + ("Yes." if np.array_equal(data, x_samples) else "No."))
 
