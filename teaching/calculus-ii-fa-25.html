@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>writings – john myers, ph.d.</title>
+<title>mat220 calculus II, fall 2025 – john myers, ph.d.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./img/fav.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a06638f4c40e56355deca4ce68239e3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../img/fav.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a06638f4c40e56355deca4ce68239e3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,79 +69,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-posts .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;display=swap" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -153,15 +93,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">about</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./writings.html" aria-current="page"> 
+    <a class="nav-link" href="../writings.html"> 
 <span class="menu-text">writings</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -170,11 +110,11 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
         <li>
-    <a class="dropdown-item" href="./teaching/calculus-ii-fa-25.html">
+    <a class="dropdown-item" href="../teaching/calculus-ii-fa-25.html">
  <span class="dropdown-text">mat220 calculus II, fall 2025</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./teaching/analysis-fa-25.html">
+    <a class="dropdown-item" href="../teaching/analysis-fa-25.html">
  <span class="dropdown-text">mat347 analysis, fall 2025</span></a>
   </li>  
     </ul>
@@ -206,32 +146,205 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">mat220 calculus II, fall 2025</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<p>My writings gravitate toward the intersection of tech, data, and math: three domains that increasingly define our modern world. Technology provides the computational power to tackle complex problems, data gives us the raw material to understand patterns and make predictions, and mathematics supplies the theoretical framework that makes it all rigorous and reliable. I explore these connections through a tri-lingual approach using mathematical theory, <code>Python</code> implementations, and <code>R</code> code, with posts ranging from theoretical and technical deep-dives to practical applications in business, finance, insurance, and risk management, or anything else that catches my interests.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/h-bar.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
-</figure>
-</div>
-<p>Coming soon…</p>
-<div id="listing-posts" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
 
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-
+<table style="width:75%; margin-left:auto; margin-right:auto; margin-bottom: 50px;">
+<tbody><tr>
+<td>
+instructor:
+</td>
+<td>
+john myers
+</td>
+</tr>
+<tr>
+<td>
+office + office hours:
+</td>
+<td>
+marano 175, 12-12:30 MWF
+</td>
+</tr>
+<tr>
+<td>
+homework:
+</td>
+<td>
+<a href="https://www.webassign.net/" target="_blank">link</a>
+</td>
+</tr>
+<tr>
+<td>
+syllabus:
+</td>
+<td>
+<a href="https://drive.google.com/file/d/1QJXgkrPomyZBFSa09maq1YNKsED7JsAv/view?usp=drive_link" target="_blank">link</a>
+</td>
+</tr>
+</tbody></table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 18%">
+<col style="width: 45%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>week</th>
+<th>date</th>
+<th>topics</th>
+<th>info + due dates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>6</td>
+<td>09.29 mon</td>
+<td></td>
+<td>section 7.1 hw due @ 12:30pm</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>09.26 fri</td>
+<td>7.1 integration by parts <a href="https://drive.google.com/file/d/1W4zJ2UTxDmFeCEeU6gEzUl2TbXOtIXga/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/19JN0RAkBkMB9fCDzkDhmu5kNXPTpst1T/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>quiz 5 on sections 5.4 and 5.5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.25 thu</td>
+<td>group exploration 5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>09.24 wed</td>
+<td>7.1 integration by parts <a href="https://drive.google.com/file/d/1W4zJ2UTxDmFeCEeU6gEzUl2TbXOtIXga/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/19JN0RAkBkMB9fCDzkDhmu5kNXPTpst1T/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>section 5.5 hw due @ 12:30pm</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.22 mon</td>
+<td>5.5 average value of a function <a href="https://drive.google.com/file/d/1BGnx6cQECkqhB4tsyc2pVJEISZzR9PfG/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1QYCcSao6PDscAB84_wa-K5aLflO1B_ZO/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>section 5.4 hw due @ 12:30pm</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>09.19 fri</td>
+<td>5.4 work <a href="https://drive.google.com/file/d/1P5uS75Yv_HH2xI-LS5cy9DTAnc6Ojiv6/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hu01cE5p9m9H4ZjUmwWqppcEeKmcLv_t/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>section 5.3 hw due @ 12:30pm<br>quiz 4 on section 5.3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.18 thu</td>
+<td>group exploration 4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>09.17 wed</td>
+<td>5.4 work <a href="https://drive.google.com/file/d/1P5uS75Yv_HH2xI-LS5cy9DTAnc6Ojiv6/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hu01cE5p9m9H4ZjUmwWqppcEeKmcLv_t/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.15 mon</td>
+<td>5.3 volumes by cylindrical shells <a href="https://drive.google.com/file/d/1vamHwA6UyjjaKASqVgt6-V2X53ddqxu4/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1SGFCkv7sPgULNXvTvnbG3b4QFt97Vp4f/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>section 5.2 hw due @ 12:30pm</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>09.12 fri</td>
+<td>5.2 volumes, part 2 <a href="https://drive.google.com/file/d/1KGmQtTuoKR_5iw0TwDaXZ8FT7d7W-T-H/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1LDaTVT_ELjxQiA0CIos_pF8Vws0tf5op/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>quiz 3 on section 5.1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.11 thu</td>
+<td>group exploration 3</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>09.10 wed</td>
+<td>5.2 volumes, part 1 <a href="https://drive.google.com/file/d/175PA7nIyU_CYGualkNZYCISKu6a6ZmrF/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hkLTSigLS4VSYIdjPLMZC6BnYPX6Dg4O/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a><br>5.2 volumes, part 2 <a href="https://drive.google.com/file/d/1KGmQtTuoKR_5iw0TwDaXZ8FT7d7W-T-H/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1LDaTVT_ELjxQiA0CIos_pF8Vws0tf5op/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.08 mon</td>
+<td>5.2 volumes, part 1 <a href="https://drive.google.com/file/d/175PA7nIyU_CYGualkNZYCISKu6a6ZmrF/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1hkLTSigLS4VSYIdjPLMZC6BnYPX6Dg4O/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td>section 5.1 hw due @ 12:30pm</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>09.05 fri</td>
+<td>5.1 areas between curves <a href="https://drive.google.com/file/d/17osgFgPuFi9Qipo_aR56cUvRzq9KSA7o/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1vzS0MHk9dsMiDNiAzHLBDMt9ibfOz4AU/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>09.04 thu</td>
+<td>group exploration 2</td>
+<td>calculus I review homework due @ 9:30am</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>09.03 wed</td>
+<td>calculus I review, part 2 <a href="https://drive.google.com/file/d/1V7CTUnGHDY5Bhzws1fuV4FAsCp3OmOVy/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1JeKLb3Y-VIgRplpTzb58SyzAg2KwycXK/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>08.29 fri</td>
+<td>no class</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>08.28 thu</td>
+<td>no class</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>08.27 wed</td>
+<td>calculus I review, part 1 <a href="https://drive.google.com/file/d/1J6Eimt6KIZ73oiVVswc6Su79tN60wd9e/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1GJ1UxOkutLdNhCvE0uIBMBouIqALZ8hm/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>08.25 mon</td>
+<td>calculus I review, part 1 <a href="https://drive.google.com/file/d/1J6Eimt6KIZ73oiVVswc6Su79tN60wd9e/view?usp=drive_link" target="_blank"><i class="bi bi-journal"></i></a> <a href="https://drive.google.com/file/d/1GJ1UxOkutLdNhCvE0uIBMBouIqALZ8hm/view?usp=drive_link" target="_blank"><i class="bi bi-journal-check"></i></a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
 
