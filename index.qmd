@@ -8,4 +8,4 @@ title-block-banner: false
 }
 </style>
 
-![](img/john-myers-2.svg){fig-align='center' width=100% id=head}
+![](img/john-myers-3.svg){fig-align='center' width=100% id=head}
