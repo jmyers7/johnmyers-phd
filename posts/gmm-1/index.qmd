@@ -1,8 +1,8 @@
 ---
 title: "Gaussians all mixed up: a first look"
-date: "2025-09-22"
+date: "2025-09-25"
 toc: true
-categories: [R, Probability, Statistics, Probabilistic graphical models, Mixture models, Gaussian mixture models]
+categories: [Python, Probability, Statistics, Machine learning, Probabilistic graphical models, Mixture models, Gaussian mixture models]
 image: "thumbnail.png"
 draft: true
 ---
@@ -45,7 +45,9 @@ data = np.load("../../data/gmm-data.npy")
 sns.histplot(data=data, color=yellow, alpha=1, ec=grey, zorder=2, stat="density")
 plt.xlabel('x')
 plt.ylabel('density')
+plt.tight_layout()
 plt.show()
+plt.close()
 
 ```
 
@@ -53,6 +55,151 @@ Three clusters are immediately evident: the first with a peak around $x=10$, the
 
 Indeed, this synthetic dataset contains 1,000 observations sampled from a three-component mixture of gaussians, also called a <span style="color: #FFC300;">*gaussian mixture model*</span> or <span style="color: #FFC300;">*GMM*</span>. In this introductory post, I'll explain the mathematical and graphical structure of the GMM that generated this data. Since I fixed the GMM parameters before sampling, we know the true underlying model. In a follow-up post, I'll tackle the inverse problem: given only the dataset, how can we estimate the parameters and recover the original GMM?
 
-## Graphical structure
+## Conditional PDFs and graphical structures
 
-## Mathematical structure
+As mentioned above, a GMM combines several individual gaussians, each called a <span style="color: #FFC300;">*component*</span> of the mixture. Generating a sample $x$ from a GMM involves two steps:
+
+1. Select a component from which to generate $x$.
+2. Sample $x$ from the chosen component gaussian.
+
+The key insight is that components need not be selected with equal probability. Each component has an associated <span style="color: #FFC300;">*weight*</span> that determines its selection probability in step 1.
+
+To formalize the selection process, we introduce the *categorical distribution*. Suppose given *non-negative* real numbers $\phi_1,\phi_2,\ldots,\phi_m$ that sum to $1$:
+
+$$
+\phi_1 + \phi_2 + \cdots + \phi_m =1.
+$$
+
+We say that a discrete random variable $Y$ has a <span style="color: #FFC300;">*categorical distribution*</span>, written
+
+$$
+Y \sim \mathcal{C}at(\phi_1,\phi_2,\ldots,\phi_m),
+$$ {#eq-cat-rv}
+
+if its probability mass function has the form
+
+$$
+p(y) = \begin{cases}
+\phi_y & : y=1,2,\ldots,m, \\
+0 & : \text{otherwise}.
+\end{cases}
+$$
+
+We can now describe GMM sampling more precisely. For a GMM with $m$ components where the $i$-th component has weight $\phi_i$, and $Y$ a categorical random variable as in @eq-cat-rv, the sampling scheme above becomes:
+
+1. Sample $y$ from the categorical distribution $Y$.
+2. Given $y$, sample $x$ from the $y$-th component gaussian.
+
+This natural progression from component selection to data generation is often called <span style="color: #FFC300;">*forward sampling*</span>, for obvious reasons.
+
+We can visualize this sampling process with a simple graphical representation:
+
+![](../../img/gmm-no-param.svg){fig-align='center' width=30% style="margin-top:20px; margin-bottom:20px;"}
+
+Here, $Y$ represents the categorical random variable that encodes component weights, while $X$ represents the random variable from which we sample our observation $x$. The arrow captures the "forward" direction of the sampling process: first select a component, then generate data from it. This diagram illustrates the GMM as a simple example of a <span style="color: #FFC300;">*probabilistic graphical model*</span> (or <span style="color: #FFC300;">*PGM*</span>)---a topic I'll explore in depth in future posts.
+
+The mathematical relationship between these variables is straightforward. Given that component $y$ has been selected, the conditional distribution of $X$ is gaussian:
+
+$$
+(X \mid Y=y) \sim \mathcal{N}(\mu_y,\sigma_y^2).
+$$
+
+This conditional distribution corresponds exactly to the $y$-th component of our GMM. Notice that both the mean $\mu_y$​ and standard deviation $\sigma_y$
+are component-specific, allowing each gaussian in the mixture to have its own location and spread.
+
+A GMM thus has two different types of parameters:
+
+1. The component weights $\phi_1,\phi_2,\ldots,\phi_m$.
+2. For each $y=1,2,\ldots,m$, the guassian parameters $\mu_y$ and $\sigma_y$.
+
+As I mentioned in the introduction, in this post we assume that these parameters are fixed and known. Later, we will learn how to estimate them from data.
+
+## Marginal PDFs
+
+The marginal distribution of $X$ follows directly from the law of total probability:
+$$
+f(x) = \sum_{k=1}^m p(y)f(x|y)  = \sum_{k=1}^m \phi_k f(x|k),
+$$ {#eq-gmm-marg-pdf}
+
+where the conditional densities are normal:
+
+$$
+f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-\mu_k}{\sigma_k}\right)^2\right].
+$$
+
+Thus, the marginal density $f(x)$ is a [convex linear combination](https://en.wikipedia.org/wiki/Convex_combination){target="_blank"} of normal densities.
+
+Now let's examine the specific $3$-component GMM that generated our dataset. The component parameters are:
+
+$$
+(\mu_1,\sigma_1) = (10, 1), \quad (\mu_2,\sigma_2) = (15, 2), \quad (\mu_3,\sigma_3) = (21, 0.5),
+$$
+
+with weights:
+
+$$
+(\phi_1,\phi_2,\phi_3) = (0.2, 0.7, 0.1).
+$$
+
+Notice that the middle component (centered at 15) dominates with 70% weight, while the outer components contribute 20% and 10% respectively.
+
+Let's implement and visualize this marginal PDF in `Python`:
+
+```{python}
+#| echo: true
+#| code-fold: false
+#| fig-align: center
+
+norm_params = [
+  {"loc": 10, "scale": 1},
+  {"loc": 15, "scale": 2},
+  {"loc": 21, "scale": 0.5}
+]
+weights = [0.2, 0.7, 0.1]
+
+```
+
+The marginal PDF implementation follows @eq-gmm-marg-pdf directly:
+
+```{python}
+#| echo: true
+#| code-fold: false 
+#| fig-align: center
+
+import scipy.stats as ss
+
+def marginal_pdf(x):  
+  return sum([weight * ss.norm(**param).pdf(x) for weight, param in zip(weights, norm_params)])
+
+```
+
+Finally, we can compare our theoretical marginal PDF against the empirical histogram:
+
+```{python}
+#| echo: true
+#| code-fold: false
+#| fig-align: center
+
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+mesh = np.linspace(7, 23, num=200)
+data = np.load("../../data/gmm-data.npy")
+
+sns.histplot(data=data, color=yellow, alpha=0.25, ec=grey, zorder=2, stat="density", label="data")
+plt.plot(mesh, marginal_pdf(mesh), color=blue, label="marginal PDF")
+plt.xlabel("x")
+plt.ylabel("density")
+plt.legend()
+plt.tight_layout()
+plt.show()
+plt.close()
+
+```
+
+The close agreement between our theoretical marginal PDF and the empirical histogram confirms that our synthetic dataset faithfully represents the underlying GMM. Notice how the theoretical curve captures all three modes: the subtle left peak around $x=10$, the dominant central peak near $x=15$, and the sharp right peak at $x=21$. The varying heights and widths of these peaks directly reflect the component weights and standard deviations we specified.
+
+## Sampling
+
+Having established the theoretical foundation and visualized the marginal PDF, let's now examine the process behind generating our synthetic dataset.
