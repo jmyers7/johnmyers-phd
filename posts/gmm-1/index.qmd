@@ -1,12 +1,11 @@
 ---
 title: "Gaussians all mixed up: a first look"
-date: "2025-09-25"
+date: "2025-09-26"
 toc: true
 categories: [Python, Probability, Statistics, Machine learning, Probabilistic graphical models, Mixture models, Gaussian mixture models]
 image: "thumbnail.png"
 draft: true
 ---
-
 
 A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this model assumes that observed data arises from a combination of several underlying normal distributions, each contributing to the overall distribution with different weights and parameters. Rather than forcing all data points to conform to a single bell curve, a gaussian mixture allows for multiple clusters, each governed by its own mean, variance, and relative importance in the mixture.
 
@@ -204,3 +203,4 @@ The close agreement between our theoretical marginal PDF and the empirical histo
 ## Sampling
 
 Having established the theoretical foundation and visualized the marginal PDF, let's now examine the process behind generating our synthetic dataset.
+
