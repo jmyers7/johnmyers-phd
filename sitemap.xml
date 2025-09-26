@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://johnmyers-phd.com/writings.html</loc>
-    <lastmod>2025-09-26T11:35:12.959Z</lastmod>
+    <lastmod>2025-09-26T11:38:09.698Z</lastmod>
   </url>
   <url>
     <loc>https://johnmyers-phd.com/teaching/calculus-ii-fa-25.html</loc>
@@ -11,6 +11,10 @@
   <url>
     <loc>https://johnmyers-phd.com/index.html</loc>
     <lastmod>2025-09-26T04:56:16.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://johnmyers-phd.com/posts/gmm-1/index.html</loc>
+    <lastmod>2025-09-26T12:21:00.535Z</lastmod>
   </url>
   <url>
     <loc>https://johnmyers-phd.com/about.html</loc>

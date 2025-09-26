@@ -1,6 +1,8 @@
 [
   {
     "listing": "/writings.html",
-    "items": []
+    "items": [
+      "/posts/gmm-1/index.html"
+    ]
   }
 ]

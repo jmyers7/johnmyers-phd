@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -211,7 +211,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2F1c3NpYW4lMjBtaXh0dXJlJTIwbW9kZWxz">Gaussian mixture models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFjaGluZSUyMGxlYXJuaW5n">Machine learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWl4dHVyZSUyMG1vZGVscw==">Mixture models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvYmFiaWxpc3RpYyUyMGdyYXBoaWNhbCUyMG1vZGVscw==">Probabilistic graphical models <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3RhdGlzdGljcw==">Statistics <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -224,10 +224,47 @@ window.Quarto = {
 <p><img src="img/h-bar.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
 </figure>
 </div>
-<p>Coming soon…</p>
 <div id="listing-posts" class="quarto-listing quarto-listing-container-default">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="UHl0aG9uJTJDUHJvYmFiaWxpdHklMkNTdGF0aXN0aWNzJTJDTWFjaGluZSUyMGxlYXJuaW5nJTJDUHJvYmFiaWxpc3RpYyUyMGdyYXBoaWNhbCUyMG1vZGVscyUyQ01peHR1cmUlMjBtb2RlbHMlMkNHYXVzc2lhbiUyMG1peHR1cmUlMjBtb2RlbHM=" data-listing-date-sort="1758859200000" data-listing-file-modified-sort="1758889260535" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1310">
+<div class="thumbnail"><a href="./posts/gmm-1/index.html" class="no-external">
 
+<img loading="lazy" src="./posts/gmm-1/thumbnail.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/gmm-1/index.html" class="no-external">Gaussians all mixed up: a first look</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('U3RhdGlzdGljcw=='); return false;">Statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMGxlYXJuaW5n'); return false;">Machine learning</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpc3RpYyUyMGdyYXBoaWNhbCUyMG1vZGVscw=='); return false;">Probabilistic graphical models</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWl4dHVyZSUyMG1vZGVscw=='); return false;">Mixture models</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('R2F1c3NpYW4lMjBtaXh0dXJlJTIwbW9kZWxz'); return false;">Gaussian mixture models</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/gmm-1/index.html" class="no-external">
+A mixture of gaussians represents one of the most elegant and practically useful concepts in probability theory and machine learning. At its core, this model assumes that…
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/gmm-1/index.html" class="no-external">
+<div class="listing-date">
+Sep 26, 2025
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
