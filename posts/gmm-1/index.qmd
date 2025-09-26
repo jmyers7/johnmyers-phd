@@ -119,13 +119,13 @@ As I mentioned in the introduction, in this post we assume that these parameters
 
 The marginal distribution of $X$ follows directly from the law of total probability:
 $$
-f(x) = \sum_{k=1}^m p(y)f(x|y)  = \sum_{k=1}^m \phi_k f(x|k),
+f(x) = \sum_{y=1}^m p(y)f(x|y)  = \sum_{y=1}^m \phi_y f(x|y),
 $$ {#eq-gmm-marg-pdf}
 
 where the conditional densities are normal:
 
 $$
-f(x|k) = \frac{1}{\sigma_k\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-\mu_k}{\sigma_k}\right)^2\right].
+f(x|y) = \frac{1}{\sigma_y\sqrt{2\pi}} \exp \left[ - \frac{1}{2} \left( \frac{x-\mu_y}{\sigma_y}\right)^2\right].
 $$
 
 Thus, the marginal density $f(x)$ is a [convex linear combination](https://en.wikipedia.org/wiki/Convex_combination){target="_blank"} of normal densities.
@@ -173,9 +173,9 @@ from scipy.stats import norm
 
 mesh = np.linspace(7, 23, num=200)
 
-for k, (param, weight) in enumerate(zip(norm_params, weights)):
+for y, (param, weight) in enumerate(zip(norm_params, weights)):
   X = norm(**param)
-  plt.plot(mesh, weight * X.pdf(mesh), color=colors[k], label=f"component {k+1}")
+  plt.plot(mesh, weight * X.pdf(mesh), color=colors[y], label=f"component {y+1}")
 
 plt.xlabel("x")
 plt.ylabel("density")
