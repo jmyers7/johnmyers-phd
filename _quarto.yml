@@ -21,7 +21,7 @@ website:
           - teaching/calculus-ii-fa-25.qmd
           - teaching/analysis-fa-25.qmd
       - text: "probabilistic machine learning"
-        href: https://www.johnmyersmath.com/book
+        href: https://www.johnmyers-phd.com/book
         target: _blank
       - icon: github
         href: https://github.com/jmyers7/
