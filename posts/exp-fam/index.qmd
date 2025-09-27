@@ -1,0 +1,10 @@
+---
+title: "You could have invented exponential families"
+date: "2025-09-26"
+toc: true
+categories: []
+image: "thumbnail.png"
+draft: true
+---
+
+Blah!

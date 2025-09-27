@@ -1,0 +1,93 @@
+---
+title: "Linear regression"
+date: "2025-09-26"
+toc: true
+categories: []
+image: "thumbnail.png"
+draft: true
+---
+
+1. We consider three random variables $U$, $Y$, and $\varepsilon$, related to each other through the equation
+$$
+Y = U + \varepsilon.
+$$
+  Moreover, we assume that $U$ and $\varepsilon$ are independent, and that $\varepsilon \sim \mathcal{N}(0,\sigma^2)$, where $\sigma>0$ is a parameter.
+2. Alternatively, we suppose that $U$ and $Y$ are two random variables with
+$$
+(Y\mid U=u) \sim \mathcal{N}(u,\sigma^2),
+$$
+  where $\sigma>0$ is a parameter.
+
+
+We claim that these two set ups are equivalent. To prove this, we consider the functions
+
+$$
+r,s: \mathbb{R}^2 \to \mathbb{R}^2
+$$
+
+with
+
+$$
+r(u,y) = (u, y-u) \quad \text{and} \quad s(u,e) = (u, u + e).
+$$
+
+Notice that $r$ and $s$ are mututal inverses, and that
+
+$$
+|\det{\left(\nabla r(u,y)\right)}| = |\det{\left(\nabla s(u,e)\right)}| = 1.
+$$
+
+Now, suppose that we have the three random variables $U$, $Y$, and $\varepsilon$ as in the first set up. Then we have
+
+$$
+(U,Y) = s(U,\varepsilon)
+$$
+
+where $s$ is the function above. Applying a [density transformation](https://johnmyers-phd.com/book/chapters/07-more-prob.html#density-transformations) reveals that
+
+$$
+f_{(U,Y)}(u,y) = f_{(U,\varepsilon)}(r(u,y)) = f_U(u)f_\varepsilon(y-u) ,
+$$
+
+where the second inequality follows from indpendence of $U$ and $\varepsilon$. But
+
+$$
+f_\varepsilon(y-u) = \frac{1}{\sigma \sqrt{2\pi}}\exp \left[ - \frac{1}{2} \left( \frac{y-u}{\sigma}\right)^2\right],
+$$
+
+so that indeed
+
+$$
+(Y\mid U=u) \sim \mathcal{N}(u,\sigma^2),
+$$
+
+since $f_{Y|U}(y|u) = f_\varepsilon(y-u)$.
+
+Conversely, suppose that we have a pair of random variables $U$ and $Y$ as in the second set up. Define the random variable $\varepsilon$ via the equation
+
+$$
+(U,\varepsilon) = r(U,Y).
+$$
+
+Then, we have
+
+$$
+f_{(U,\varepsilon)}(u,e) = f_{(U,Y)}(s(u,e)) = f_{(U,Y)}(u,u+e) = f_U(u)f_{Y|U}(u+e|u).
+$$ {#eq-factor}
+
+
+But
+
+$$
+f_{Y|U}(u+e|u) = \frac{1}{\sigma\sqrt{2\pi}} \exp \left[ -\frac{1}{2} \left( \frac{e}{\sigma}\right)^2\right],
+$$
+
+and hence
+
+$$
+f_\varepsilon(e) = \int_\mathbb{R} f_{(U,\varepsilon)}(u,e) \ \text{d}u = \frac{1}{\sigma\sqrt{2\pi}} \exp \left[ -\frac{1}{2} \left( \frac{e}{\sigma}\right)^2\right] \int_\mathbb{R} f_U(u) \ \text{d}u.
+$$
+
+This shows $\varepsilon \sim \mathcal{N}(0,\sigma^2)$. Also, the factorization in @eq-factor shows that $U$ and $\varepsilon$ are independent.
+
+

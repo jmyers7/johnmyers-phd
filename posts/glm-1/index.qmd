@@ -1,0 +1,16 @@
+---
+title: "Generalized linear models: part 1"
+date: "2025-09-26"
+toc: true
+categories: []
+image: "thumbnail.png"
+draft: true
+---
+
+A density function must take on only nonzero values. Thus, it is natural to inspect densities of the form
+
+$$
+f(x) = h(x) e^x,
+$$
+
+where $h(x)$ is a nonnegative function.
